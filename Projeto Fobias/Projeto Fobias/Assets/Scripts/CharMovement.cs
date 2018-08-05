@@ -56,7 +56,7 @@ public class CharMovement : MonoBehaviour {
         //Sistema de Respiração
         if(Input.GetKey (KeyCode.Space) && cansaco >= 0)    //Segurar espaço e ter o cansaço acima de zero reduz a velocidade, porém reduz o cansaço com tempo de uso da respiração
         {
-            speed = 1f;
+            speed = 0f;
             cansaco -= 1f * Time.deltaTime;
             Debug.Log(cansaco);
         }
