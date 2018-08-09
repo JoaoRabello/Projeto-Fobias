@@ -1,0 +1,2283 @@
+fileFormatVersion: 2
+guid: 8714b0d02c9e5164cbd87b63978af9ed
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Ariel-Walk-idle-run-Sheet_0
+    21300002: Ariel-Walk-idle-run-Sheet_1
+    21300004: Ariel-Walk-idle-run-Sheet_2
+    21300006: Ariel-Walk-idle-run-Sheet_3
+    21300008: Ariel-Walk-idle-run-Sheet_4
+    21300010: Ariel-Walk-idle-run-Sheet_5
+    21300012: Ariel-Walk-idle-run-Sheet_6
+    21300014: Ariel-Walk-idle-run-Sheet_7
+    21300016: Ariel-Walk-idle-run-Sheet_8
+    21300018: Ariel-Walk-idle-run-Sheet_9
+    21300020: Ariel-Walk-idle-run-Sheet_10
+    21300022: Ariel-Walk-idle-run-Sheet_11
+    21300024: Ariel-Walk-idle-run-Sheet_12
+    21300026: Ariel-Walk-idle-run-Sheet_13
+    21300028: Ariel-Walk-idle-run-Sheet_14
+    21300030: Ariel-Walk-idle-run-Sheet_15
+    21300032: Ariel-Walk-idle-run-Sheet_16
+    21300034: Ariel-Walk-idle-run-Sheet_17
+    21300036: Ariel-Walk-idle-run-Sheet_18
+    21300038: Ariel-Walk-idle-run-Sheet_19
+    21300040: Ariel-Walk-idle-run-Sheet_20
+    21300042: Ariel-Walk-idle-run-Sheet_21
+    21300044: Ariel-Walk-idle-run-Sheet_22
+    21300046: Ariel-Walk-idle-run-Sheet_23
+    21300048: Ariel-Walk-idle-run-Sheet_24
+    21300050: Ariel-Walk-idle-run-Sheet_25
+    21300052: Ariel-Walk-idle-run-Sheet_26
+    21300054: Ariel-Walk-idle-run-Sheet_27
+    21300056: Ariel-Walk-idle-run-Sheet_28
+    21300058: Ariel-Walk-idle-run-Sheet_29
+    21300060: Ariel-Walk-idle-run-Sheet_30
+    21300062: Ariel-Walk-idle-run-Sheet_31
+    21300064: Ariel-Walk-idle-run-Sheet_32
+    21300066: Ariel-Walk-idle-run-Sheet_33
+    21300068: Ariel-Walk-idle-run-Sheet_34
+    21300070: Ariel-Walk-idle-run-Sheet_35
+    21300072: Ariel-Walk-idle-run-Sheet_36
+    21300074: Ariel-Walk-idle-run-Sheet_37
+    21300076: Ariel-Walk-idle-run-Sheet_38
+    21300078: Ariel-Walk-idle-run-Sheet_39
+    21300080: Ariel-Walk-idle-run-Sheet_40
+    21300082: Ariel-Walk-idle-run-Sheet_41
+    21300084: Ariel-Walk-idle-run-Sheet_42
+    21300086: Ariel-Walk-idle-run-Sheet_43
+    21300088: Ariel-Walk-idle-run-Sheet_44
+    21300090: Ariel-Walk-idle-run-Sheet_45
+    21300092: Ariel-Walk-idle-run-Sheet_46
+    21300094: Ariel-Walk-idle-run-Sheet_47
+    21300096: Ariel-Walk-idle-run-Sheet_48
+    21300098: Ariel-Walk-idle-run-Sheet_49
+    21300100: Ariel-Walk-idle-run-Sheet_50
+    21300102: Ariel-Walk-idle-run-Sheet_51
+    21300104: Ariel-Walk-idle-run-Sheet_52
+    21300106: Ariel-Walk-idle-run-Sheet_53
+    21300108: Ariel-Walk-idle-run-Sheet_54
+    21300110: Ariel-Walk-idle-run-Sheet_55
+    21300112: Ariel-Walk-idle-run-Sheet_56
+    21300114: Ariel-Walk-idle-run-Sheet_57
+    21300116: Ariel-Walk-idle-run-Sheet_58
+    21300118: Ariel-Walk-idle-run-Sheet_59
+    21300120: Ariel-Walk-idle-run-Sheet_60
+    21300122: Ariel-Walk-idle-run-Sheet_61
+    21300124: Ariel-Walk-idle-run-Sheet_62
+    21300126: Ariel-Walk-idle-run-Sheet_63
+    21300128: Ariel-Walk-idle-run-Sheet_64
+    21300130: Ariel-Walk-idle-run-Sheet_65
+    21300132: Ariel-Walk-idle-run-Sheet_66
+    21300134: Ariel-Walk-idle-run-Sheet_67
+    21300136: Ariel-Walk-idle-run-Sheet_68
+    21300138: Ariel-Walk-idle-run-Sheet_69
+    21300140: Ariel-Walk-idle-run-Sheet_70
+    21300142: Ariel-Walk-idle-run-Sheet_71
+    21300144: Ariel-Walk-idle-run-Sheet_72
+    21300146: Ariel-Walk-idle-run-Sheet_73
+    21300148: Ariel-Walk-idle-run-Sheet_74
+    21300150: Ariel-Walk-idle-run-Sheet_75
+    21300152: Ariel-Walk-idle-run-Sheet_76
+    21300154: Ariel-Walk-idle-run-Sheet_77
+    21300156: Ariel-Walk-idle-run-Sheet_78
+    21300158: Ariel-Walk-idle-run-Sheet_79
+    21300160: Ariel-Walk-idle-run-Sheet_80
+    21300162: Ariel-Walk-idle-run-Sheet_81
+    21300164: Ariel-Walk-idle-run-Sheet_82
+    21300166: Ariel-Walk-idle-run-Sheet_83
+    21300168: Ariel-Walk-idle-run-Sheet_84
+    21300170: Ariel-Walk-idle-run-Sheet_85
+    21300172: Ariel-Walk-idle-run-Sheet_86
+    21300174: Ariel-Walk-idle-run-Sheet_87
+    21300176: Ariel-Walk-idle-run-Sheet_88
+    21300178: Ariel-Walk-idle-run-Sheet_89
+    21300180: Ariel-Walk-idle-run-Sheet_90
+    21300182: Ariel-Walk-idle-run-Sheet_91
+    21300184: Ariel-Walk-idle-run-Sheet_92
+    21300186: Ariel-Walk-idle-run-Sheet_93
+    21300188: Ariel-Walk-idle-run-Sheet_94
+    21300190: Ariel-Walk-idle-run-Sheet_95
+    21300192: Ariel-Walk-idle-run-Sheet_96
+    21300194: Ariel-Walk-idle-run-Sheet_97
+    21300196: Ariel-Walk-idle-run-Sheet_98
+    21300198: Ariel-Walk-idle-run-Sheet_99
+    21300200: Ariel-Walk-idle-run-Sheet_100
+    21300202: Ariel-Walk-idle-run-Sheet_101
+    21300204: Ariel-Walk-idle-run-Sheet_102
+    21300206: Ariel-Walk-idle-run-Sheet_103
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65ec780815898141b32af91df7bf755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f831e73301fe1549b954f155c68d971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba937aef28e59b4eade37342587e32a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071055f05f0533448afaa3b1128cbbaf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba08dcbd2b45d64584e6956aae20db8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad679e4f36947444a95a16ff118c52f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0cbcddab24cd5148b526da53da17496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ada523d1407fc42a22db8876365702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170f7d57e2998084784194ab79b39fe4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 277
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c90f498a0d90ab40a7c40cfbc9df16b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 252
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f74137020491d45829d1f1e4ce7611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 252
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0c732b597c4c94dbbdae79ad43a0d0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 252
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956caa97c6dc3ad4488bad020e3428e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 252
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ffb94dccc303d3488f13d65a4d77b09
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 252
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1996fa841aefd74c8c91352c9e19958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 252
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2201733b484de0b43ab8a938b1c293d0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 252
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7477ca19d52816458a84d86a6dcb5e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 252
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350a5782cb990094c946e48dac1a110f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 252
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a69e2a06fa38bbb49b16aa46baf073d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 252
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e227bf3a92c9a5e489cc6d12bc490269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 227
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be3430abd76352142b04688c8fe33aa3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 227
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457b23943598af04d91af4f6c7cd6a47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 227
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ac9abc064ddae458d9d538d5c0ac0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 227
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f4472c38e6bf7478ac5e3951164408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 227
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36dc1d8fb399d3847b1cb3e73603fa1e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 227
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9492579bcf70c459aa15e8317ca79a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 227
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b2e73cc8f693c4ab1377f1797aa099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 227
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17059831b843c4d43813c7b6b0700813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 227
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b021f95b0a7eea54194eb30ead87a143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 227
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349444ed633c4f24f981f9db75331236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 202
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34082bd4f508c3c46a5b564ffb5286ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 202
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93137210679c3f43a95f771086f0697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 202
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: effab6e94e3ad174b8a1d41ab057328b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 202
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd58fcae14edbeb4b9f79b4607fe960d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 202
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8ea9e4398ed8724080eca54936b8aee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 202
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91eea9998d27ab4aab1575ed7c16d71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 202
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e34214a38125ac409e0041cfd0f383d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 202
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de86cfc16a63c4d4d8de54f4f15e9a07
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 202
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879bdf0c5bfcbfc44867086bad17285b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 202
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 774ffae4274273647aace7a5cd133758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 177
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62142584eeef114fbebc24ad37ba374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 177
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37bd7dca0a9de34d91925572c5046bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 177
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d174ee02f4d182340afeddd2f25ef2c8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 177
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2795fafca77b70444ba72c446609fe63
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 177
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9848e7251812a664e97df2bc423d6b73
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 177
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb93055b3d29f242bd345ec5b7390ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 177
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f068b31ac538c74e8016d3beb9e888b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 177
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56c74bbb5e438f4197440c6b7060c49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 152
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5aedbbc05fec341b57233fc8cfef55
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 152
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e0564f4e3af614b8877e4a92e21c09
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 152
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37851daf079b8e349897d479ca6747d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 152
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37bf280e15b8bc344aadf65893fd8ba0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 152
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c389b9eaa714cf4e984aad77f39ea56
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 152
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b7f47c7c96d6043b32390ad029cbcc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 152
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3165927bde7b549a11abc7f8da77cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 152
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273dd136fee24fb408f323a800816213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 127
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99eb165a2c7191049926214b5e600682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 127
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2503e9c00abaf1b4b902b9c8044411d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 127
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964c442dd3d9b424b9bff163bc59d657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 127
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02427d4f1d3c03e4c80e17f97f8f191c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 128
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b78f3a9b6abe949adae3c396bdb61e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 128
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d59d706fd1ee59488391b440d983d71
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 128
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4c2cc79f4c98044847d1f3776fc62d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 128
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba19cb2f793df1f4aa47ddbe1e148274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 102
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d38453e739c51454e99ea2da6202dcee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 102
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 445571c84f481b84783b612cc94d2c6c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 102
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956de7f2eceb7844ea06d8c9ef0ed3ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 102
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8967b6bead441748b4e24d34f6b0b59
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 103
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3380606edd19942905da5bd7e7e424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 103
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27cb74229cb8fc4d9f680166b0b2577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 103
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7802586d160761045b920783d1f05650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 103
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 585a507d88ebb6444b8583a641d41562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 77
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8720dbba0791e1849ad6c538ec879904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 77
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9807371c42859c4ab63ba8f81c1848a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 77
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498d07d7c8a7a7d4e844bda631948cec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 77
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38adfed263ac5640925897c5b376eac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 78
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d90fc3860a6af44086e195e21b4fa75
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 78
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b3ac75d11d9c9f46b705757303af7cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 78
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c26223c9d57134eaeaccc7152811fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 78
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3fad110f72a78f4989bbf04accd90e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 52
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b72e783dce28f4190d2aa3a158f127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 52
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 532331d842b40514887bac94934ee3ef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 52
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c749acf8069e2c4a9a0d83eaafe4cfd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 52
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2197639b6ab48be48badb3b15dfe7b00
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 52
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e2977c71125cd4eb423592085647cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 52
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d0396e05b6a5d43a8b7abd3453bad5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 52
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad58c714960e2fd4493e3804e39f8d80
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 52
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27d02a6be8b59bf4383ae3dcb8381757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 27
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168ec0fbf954f844ebeb9aacf7ce88c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 27
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b802ed33eb7c049a8e9dd5f557a658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 27
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05cd9ee2b49dcfb44b23c19d0e97abbb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 27
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0abedb38842e24cb0f36711a4a138f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 28
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9422df6d46d0d4191f5ddf20b55ad9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 28
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ccfb52e2e9c7045bc45a6969ec8154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 28
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c0456cb86110b64380b0da5153c65f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 28
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9be32d148488b48bdb2d2454418dad
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8db4725fd471cb4385185fb8fcce8fc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 2
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48305e32f369d8d41afb64f0497749af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 2
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4800b8980a3fd44bb06610264c433b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bc0fbd8d4c9db4d89f591634b97c60
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 2
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed033018e86f92743a3de7403f8dbf2e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 2
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979873d85d46fd1449427620e51f9fe9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 2
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd2875dd8117304dbc8a63cf4b1c3f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ariel-Walk-idle-run-Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 2
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8e57f63d206a347957db82480b758d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4d01cc55cb8d9b84b8457bab43be238b
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
