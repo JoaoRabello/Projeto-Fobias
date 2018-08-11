@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharMovement : MonoBehaviour {
 
-    //Instâncias para movimento
+    //Movimento
     Rigidbody2D rgb;
     public float speed;
     Vector3 diagSupEsq;
@@ -13,9 +13,12 @@ public class CharMovement : MonoBehaviour {
     Vector3 diagInfDir;
     float cansaco;
 
+    //Animação
+    Animator anim;
 
     void Start () {
         rgb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         speed = 2f;
         cansaco = 0f;
@@ -80,16 +83,19 @@ public class CharMovement : MonoBehaviour {
             if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal superior esquerda
             {
                 rgb.transform.Translate(diagSupEsq * speed * Time.deltaTime);       //Função que move o objeto em um sentido e direção, com velocidade e usando um vetor
+                anim.SetFloat("x", -1);       anim.SetFloat("y", 1);
             }
             else
             {
                 if (Input.GetKey(KeyCode.RightArrow))   //Pressionando também o botão direito, segue para a diagonal superior direita
                 {
                     rgb.transform.Translate(diagSupDir * speed * Time.deltaTime);
+                    anim.SetFloat("x", 1);      anim.SetFloat("y", 1);
                 }
                 else        //Se só pressionar o botão para cima, então segue para cima
                 {
                     rgb.transform.Translate(Vector3.up * speed * Time.deltaTime);
+                    anim.SetFloat("x", 0);      anim.SetFloat("y", 1);
                 }
             }
         }
@@ -100,16 +106,19 @@ public class CharMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal inferior esquerda
                 {
                     rgb.transform.Translate(diagInfEsq * speed * Time.deltaTime);
+                    anim.SetFloat("x", -1);     anim.SetFloat("y", -1);
                 }
                 else
                 {
                     if (Input.GetKey(KeyCode.RightArrow))   //Pressionando também o botão direito, segue para a diagonal inferior direita
                     {
                         rgb.transform.Translate(diagInfDir * speed * Time.deltaTime);
+                        anim.SetFloat("x", 1);     anim.SetFloat("y", -1);
                     }
                     else        //Se só pressionar o botão para baixo, então segue para baixo
                     {
                         rgb.transform.Translate(Vector3.down * speed * Time.deltaTime);
+                        anim.SetFloat("x", 0);      anim.SetFloat("y", -1);
                     }
 
                 }
@@ -119,12 +128,14 @@ public class CharMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.RightArrow))       //Se pressiona o botão para direita, então anda para direita
                 {
                     rgb.transform.Translate(Vector3.right * speed * Time.deltaTime);
+                    anim.SetFloat("x", 1);      anim.SetFloat("y", 0);
                 }
                 else
                 {
                     if (Input.GetKey(KeyCode.LeftArrow))        //Se pressiona o botão para esquerda, então anda para esquerda
                     {
                         rgb.transform.Translate(Vector3.left * speed * Time.deltaTime);
+                        anim.SetFloat("x", -1);     anim.SetFloat("y", 0);
                     }
                 }
             }
