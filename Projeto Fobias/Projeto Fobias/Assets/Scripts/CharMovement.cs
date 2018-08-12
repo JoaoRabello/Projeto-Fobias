@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharMovement : MonoBehaviour {
 
@@ -12,9 +13,13 @@ public class CharMovement : MonoBehaviour {
     Vector3 diagInfEsq;
     Vector3 diagInfDir;
     float cansaco;
+    bool canMove;
 
     //Animação
     Animator anim;
+
+    //UI
+    public Text cansacoText;
 
     void Start () {
         rgb = GetComponent<Rigidbody2D>();
@@ -22,28 +27,31 @@ public class CharMovement : MonoBehaviour {
 
         speed = 2f;
         cansaco = 0f;
+        canMove = true;
 
         //Vetores para guiarem o char para as diagonais (como na rosa dos ventos NO, NE, SO, SE)
-        diagSupEsq = new Vector3(-0.75f, 0.75f, 0);
-        diagSupDir = new Vector3(0.75f, 0.75f, 0);
-        diagInfEsq = new Vector3(-0.75f, -0.75f, 0);
-        diagInfDir = new Vector3(0.75f, -0.75f, 0);
+        
+        diagSupEsq = new Vector3(-1f, 0.5f, 0);
+        diagSupDir = new Vector3(1f, 0.5f, 0);
+        diagInfEsq = new Vector3(-1f, -0.5f, 0);
+        diagInfDir = new Vector3(1f, -0.5f, 0);
+        
     }
 	
 	// Update é chamado a cada frame
 	void Update () {
 
         //Sistema de Corrida e Cansaço
-        if (Input.GetKey(KeyCode.LeftShift) && cansaco < 3f)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
+        if (Input.GetKey(KeyCode.Z) && cansaco < 3f)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
         {
             speed = 4f;
             anim.SetBool("running", true);
             cansaco += 1f * Time.deltaTime;     //Aqui o cansaço aumenta com o tempo de uso da corrida
-            Debug.Log(cansaco);
+            cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
         }
         else
         {
-            if (Input.GetKeyUp(KeyCode.LeftShift))      //Se o shift esquerdo é liberado, a velocidade volta ao normal
+            if (Input.GetKeyUp(KeyCode.Z))      //Se o shift esquerdo é liberado, a velocidade volta ao normal
             {
                 speed = 2f;
                 anim.SetBool("running", false);
@@ -59,18 +67,18 @@ public class CharMovement : MonoBehaviour {
         }
 
         //Sistema de Respiração
-        if(Input.GetKey (KeyCode.Space) && cansaco >= 0)    //Segurar espaço e ter o cansaço acima de zero reduz a velocidade, porém reduz o cansaço com tempo de uso da respiração
+        if(Input.GetKey(KeyCode.X) && cansaco >= 0)    //Segurar espaço e ter o cansaço acima de zero reduz a velocidade, porém reduz o cansaço com tempo de uso da respiração
         {
-            speed = 0f;
+            canMove = false;
             anim.SetBool("moving", false);
             cansaco -= 1f * Time.deltaTime;
-            Debug.Log(cansaco);
+            cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
         }
         else
         {
-            if(Input.GetKeyUp(KeyCode.Space) || cansaco <= 0)   //Liberar o espaço ou ter o cansaço zerado faz com que a velocidade retorne ao normal
+            if(Input.GetKeyUp(KeyCode.X) || cansaco <= 0)   //Liberar o espaço ou ter o cansaço zerado faz com que a velocidade retorne ao normal
             {
-                speed = 2f;
+                canMove = true;
             }
         }
 
@@ -80,7 +88,7 @@ public class CharMovement : MonoBehaviour {
     private void FixedUpdate()
     {
 
-        MoveInputCheck();
+        if (canMove)  MoveInputCheck();
   
     }
 
@@ -102,6 +110,7 @@ public class CharMovement : MonoBehaviour {
         }
 
         //Sistema de Movimentação
+
         if (Input.GetKey(KeyCode.UpArrow))      //Se pressiona o botão para cima, então anda para cima
         {
             if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal superior esquerda
