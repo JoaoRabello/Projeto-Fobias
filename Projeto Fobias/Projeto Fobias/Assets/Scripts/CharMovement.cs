@@ -79,32 +79,44 @@ public class CharMovement : MonoBehaviour {
     // FixedUpdate é chamado mais vezes que o Update normal, servindo para cálculos físicos (ótimo para evitar colisões estranhas)
     private void FixedUpdate()
     {
+
+        MoveInputCheck();
+  
+    }
+
+    private void AnimateAndMove(Vector3 direction, int x, int y)
+    {
+        anim.SetBool("moving", true);       //Muda o parâmetro moving para verdadeiro, assim o animador começa a rodar animações de movimento
+
+        anim.SetFloat("x", x);  //Coloca no parâmetro x o valor recebido como x
+        anim.SetFloat("y", y);
+
+        rgb.transform.Translate(direction * speed * Time.deltaTime);    //Move na direção recebida com a velocidade atual arrumada com deltatime (evita diferenças de velocidade por causa de FPS)
+    }
+
+    private void MoveInputCheck()
+    {
         if (!Input.anyKey)
         {
             anim.SetBool("moving", false);
         }
 
-
         //Sistema de Movimentação
         if (Input.GetKey(KeyCode.UpArrow))      //Se pressiona o botão para cima, então anda para cima
         {
-            anim.SetBool("moving", true);
             if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal superior esquerda
             {
-                rgb.transform.Translate(diagSupEsq * speed * Time.deltaTime);       //Função que move o objeto em um sentido e direção, com velocidade e usando um vetor
-                anim.SetFloat("x", -1);       anim.SetFloat("y", 1);
+                AnimateAndMove(diagSupEsq, -1, 1);
             }
             else
             {
                 if (Input.GetKey(KeyCode.RightArrow))   //Pressionando também o botão direito, segue para a diagonal superior direita
                 {
-                    rgb.transform.Translate(diagSupDir * speed * Time.deltaTime);
-                    anim.SetFloat("x", 1);      anim.SetFloat("y", 1);
+                    AnimateAndMove(diagSupDir, 1, 1);
                 }
                 else        //Se só pressionar o botão para cima, então segue para cima
                 {
-                    rgb.transform.Translate(Vector3.up * speed * Time.deltaTime);
-                    anim.SetFloat("x", 0);      anim.SetFloat("y", 1);
+                    AnimateAndMove(Vector3.up, 0, 1);
                 }
             }
         }
@@ -112,23 +124,19 @@ public class CharMovement : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.DownArrow))        //Se pressiona o botão para baixo, então anda para baixo
             {
-                anim.SetBool("moving", true);
                 if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal inferior esquerda
                 {
-                    rgb.transform.Translate(diagInfEsq * speed * Time.deltaTime);
-                    anim.SetFloat("x", -1);     anim.SetFloat("y", -1);
+                    AnimateAndMove(diagInfEsq, -1, -1);
                 }
                 else
                 {
                     if (Input.GetKey(KeyCode.RightArrow))   //Pressionando também o botão direito, segue para a diagonal inferior direita
                     {
-                        rgb.transform.Translate(diagInfDir * speed * Time.deltaTime);
-                        anim.SetFloat("x", 1);     anim.SetFloat("y", -1);
+                        AnimateAndMove(diagInfDir, 1, -1);
                     }
                     else        //Se só pressionar o botão para baixo, então segue para baixo
                     {
-                        rgb.transform.Translate(Vector3.down * speed * Time.deltaTime);
-                        anim.SetFloat("x", 0);      anim.SetFloat("y", -1);
+                        AnimateAndMove(Vector3.down, 0, -1);
                     }
 
                 }
@@ -137,21 +145,16 @@ public class CharMovement : MonoBehaviour {
             {
                 if (Input.GetKey(KeyCode.RightArrow))       //Se pressiona o botão para direita, então anda para direita
                 {
-                    anim.SetBool("moving", true);
-                    rgb.transform.Translate(Vector3.right * speed * Time.deltaTime);
-                    anim.SetFloat("x", 1);      anim.SetFloat("y", 0);
+                    AnimateAndMove(Vector3.right, 1, 0);
                 }
                 else
                 {
                     if (Input.GetKey(KeyCode.LeftArrow))        //Se pressiona o botão para esquerda, então anda para esquerda
                     {
-                        anim.SetBool("moving", true);
-                        rgb.transform.Translate(Vector3.left * speed * Time.deltaTime);
-                        anim.SetFloat("x", -1);     anim.SetFloat("y", 0);
+                        AnimateAndMove(Vector3.left, -1, 0);
                     }
                 }
             }
         }
     }
-
 }
