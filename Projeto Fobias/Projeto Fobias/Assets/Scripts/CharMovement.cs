@@ -37,6 +37,7 @@ public class CharMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftShift) && cansaco < 3f)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
         {
             speed = 4f;
+            anim.SetBool("running", true);
             cansaco += 1f * Time.deltaTime;     //Aqui o cansaço aumenta com o tempo de uso da corrida
             Debug.Log(cansaco);
         }
@@ -45,13 +46,14 @@ public class CharMovement : MonoBehaviour {
             if (Input.GetKeyUp(KeyCode.LeftShift))      //Se o shift esquerdo é liberado, a velocidade volta ao normal
             {
                 speed = 2f;
-                Debug.Log("Parou de correr");
+                anim.SetBool("running", false);
             }
             else
             {
                 if (cansaco >= 3f)      //Se o cansaço alcança o máximo, a velocidade também volta ao normal, não podendo correr
                 {
                     speed = 2f;
+                    anim.SetBool("running", false);
                 }
             }
         }
@@ -60,6 +62,7 @@ public class CharMovement : MonoBehaviour {
         if(Input.GetKey (KeyCode.Space) && cansaco >= 0)    //Segurar espaço e ter o cansaço acima de zero reduz a velocidade, porém reduz o cansaço com tempo de uso da respiração
         {
             speed = 0f;
+            anim.SetBool("moving", false);
             cansaco -= 1f * Time.deltaTime;
             Debug.Log(cansaco);
         }
@@ -76,10 +79,16 @@ public class CharMovement : MonoBehaviour {
     // FixedUpdate é chamado mais vezes que o Update normal, servindo para cálculos físicos (ótimo para evitar colisões estranhas)
     private void FixedUpdate()
     {
+        if (!Input.anyKey)
+        {
+            anim.SetBool("moving", false);
+        }
+
 
         //Sistema de Movimentação
         if (Input.GetKey(KeyCode.UpArrow))      //Se pressiona o botão para cima, então anda para cima
         {
+            anim.SetBool("moving", true);
             if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal superior esquerda
             {
                 rgb.transform.Translate(diagSupEsq * speed * Time.deltaTime);       //Função que move o objeto em um sentido e direção, com velocidade e usando um vetor
@@ -103,6 +112,7 @@ public class CharMovement : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.DownArrow))        //Se pressiona o botão para baixo, então anda para baixo
             {
+                anim.SetBool("moving", true);
                 if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal inferior esquerda
                 {
                     rgb.transform.Translate(diagInfEsq * speed * Time.deltaTime);
@@ -127,6 +137,7 @@ public class CharMovement : MonoBehaviour {
             {
                 if (Input.GetKey(KeyCode.RightArrow))       //Se pressiona o botão para direita, então anda para direita
                 {
+                    anim.SetBool("moving", true);
                     rgb.transform.Translate(Vector3.right * speed * Time.deltaTime);
                     anim.SetFloat("x", 1);      anim.SetFloat("y", 0);
                 }
@@ -134,6 +145,7 @@ public class CharMovement : MonoBehaviour {
                 {
                     if (Input.GetKey(KeyCode.LeftArrow))        //Se pressiona o botão para esquerda, então anda para esquerda
                     {
+                        anim.SetBool("moving", true);
                         rgb.transform.Translate(Vector3.left * speed * Time.deltaTime);
                         anim.SetFloat("x", -1);     anim.SetFloat("y", 0);
                     }
