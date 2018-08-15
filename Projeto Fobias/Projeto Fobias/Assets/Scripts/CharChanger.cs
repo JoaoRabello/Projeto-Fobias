@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharChanger : MonoBehaviour {
 
+    #region Variaveis
     bool canChange;
     public int charNumber;
     int lastCharNumber;
@@ -14,6 +15,9 @@ public class CharChanger : MonoBehaviour {
     GameObject ezekiel;
     GameObject pamela;
 
+    Animator anim;
+    #endregion
+
     private void Awake()
     {
         ariel = GameObject.FindGameObjectWithTag("Ariel");
@@ -22,12 +26,12 @@ public class CharChanger : MonoBehaviour {
         pamela = GameObject.FindGameObjectWithTag("Pamela");
     }
 
-    // Use this for initialization
+
     void Start () {
         canChange = false;
+        anim = GetComponent<Animator>();
     }
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.C) && canChange) ChangeChar(charNumber);
     }
@@ -75,33 +79,28 @@ public class CharChanger : MonoBehaviour {
         }
     }
 
+    #region Métodos
     void ChangeChar(int i)
     {
         switch (i)
         {
             case 0:
                 //Muda para Ariel
-                ariel.SetActive(true);
-                clarice.SetActive(false);
+                SwapChar(ariel, clarice);
                 charNumber = 0;
-                tempCharNumber = charNumber;
-                charNumber = lastCharNumber;
-                lastCharNumber = tempCharNumber;
-                Debug.Log(charNumber);
+                SwapCharNumber();
+                anim.SetBool("ariel-clarice", false);
                 break;
             case 1:
                 //Muda para Ezekiel
                 break;
             case 2:
                 //Muda para Clarice
-                ariel.SetActive(false);
-                clarice.SetActive(true);
+                SwapChar(clarice, ariel);
                 clarice.GetComponent<SpriteRenderer>().enabled = true;
                 charNumber = 2;
-                tempCharNumber = charNumber;
-                charNumber = lastCharNumber;
-                lastCharNumber = tempCharNumber;
-                Debug.Log(charNumber);
+                SwapCharNumber();
+                anim.SetBool("ariel-clarice", true);
                 break;
             case 3:
                 //Muda para Pamela
@@ -110,4 +109,18 @@ public class CharChanger : MonoBehaviour {
                 break;
         }
     }
+
+    void SwapChar(GameObject go1, GameObject go2)
+    {
+        go1.SetActive(true);
+        go2.SetActive(false);
+    }
+
+    void SwapCharNumber()
+    {
+        tempCharNumber = charNumber;
+        charNumber = lastCharNumber;
+        lastCharNumber = tempCharNumber;
+    }
+    #endregion
 }
