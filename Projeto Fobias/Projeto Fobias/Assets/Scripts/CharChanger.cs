@@ -10,10 +10,12 @@ public class CharChanger : MonoBehaviour {
     int lastCharNumber;
     int tempCharNumber;
 
+    public Transform charPoolPosition;
+
     GameObject ariel;
     GameObject clarice;
-    GameObject ezekiel;
-    GameObject pamela;
+    //GameObject ezekiel;
+    //GameObject pamela;
 
     Animator anim;
     #endregion
@@ -22,8 +24,11 @@ public class CharChanger : MonoBehaviour {
     {
         ariel = GameObject.FindGameObjectWithTag("Ariel");
         clarice = GameObject.FindGameObjectWithTag("Clarice");
-        ezekiel = GameObject.FindGameObjectWithTag("Ezekiel");
-        pamela = GameObject.FindGameObjectWithTag("Pamela");
+        clarice.GetComponent<CharMovement>().enabled = false;
+        //ezekiel = GameObject.FindGameObjectWithTag("Ezekiel");
+        //ezekiel.GetComponent<CharMovement>().enabled = false;
+        //pamela = GameObject.FindGameObjectWithTag("Pamela");
+        //pamela.GetComponent<CharMovement>().enabled = false;
     }
 
 
@@ -34,6 +39,7 @@ public class CharChanger : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.C) && canChange) ChangeChar(charNumber);
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -42,7 +48,7 @@ public class CharChanger : MonoBehaviour {
         {
             canChange = true;
             lastCharNumber = 0;
-            Debug.Log(lastCharNumber);
+            Debug.Log("Char atual: " + lastCharNumber);
         }
         else
         {
@@ -57,7 +63,7 @@ public class CharChanger : MonoBehaviour {
                 {
                     canChange = true;
                     lastCharNumber = 2;
-                    Debug.Log(lastCharNumber);
+                    Debug.Log("Char atual: " + lastCharNumber);
                 }
                 else
                 {
@@ -97,7 +103,6 @@ public class CharChanger : MonoBehaviour {
             case 2:
                 //Muda para Clarice
                 SwapChar(clarice, ariel);
-                clarice.GetComponent<SpriteRenderer>().enabled = true;
                 charNumber = 2;
                 SwapCharNumber();
                 anim.SetBool("ariel-clarice", true);
@@ -113,7 +118,12 @@ public class CharChanger : MonoBehaviour {
     void SwapChar(GameObject go1, GameObject go2)
     {
         go1.SetActive(true);
+        go1.GetComponent<CharMovement>().enabled = true;
+        go1.transform.position = go2.transform.position;
+
         go2.SetActive(false);
+        go2.GetComponent<CharMovement>().enabled = true;
+        go2.transform.position = charPoolPosition.position;
     }
 
     void SwapCharNumber()
