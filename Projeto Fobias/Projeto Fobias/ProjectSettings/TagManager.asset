@@ -8,6 +8,8 @@ TagManager:
   - Ezekiel
   - Clarice
   - Pamela
+  - Item
+  - Item Image
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CharMovement : MonoBehaviour {
 
+
+    #region Variáveis
     //Movimento
     Rigidbody2D rgb;
     public float speed;
@@ -20,7 +22,9 @@ public class CharMovement : MonoBehaviour {
 
     //UI
     public Text cansacoText;
+    #endregion
 
+    #region Main
     void Start () {
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -84,6 +88,15 @@ public class CharMovement : MonoBehaviour {
 
     }
 
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Item") && col.gameObject.GetComponent<Tag>().GetMyTag() == Tag.Tags.cachorro)  Instantiate(col.gameObject.GetComponent<Tag>().image);      //SISTEMA DE MULTI TAGGING
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Item") && col.gameObject.GetComponent<Tag>().GetMyTag() == Tag.Tags.cachorro) Destroy(GameObject.FindGameObjectWithTag("Item Image"));
+    }
     // FixedUpdate é chamado mais vezes que o Update normal, servindo para cálculos físicos (ótimo para evitar colisões estranhas)
     private void FixedUpdate()
     {
@@ -91,7 +104,9 @@ public class CharMovement : MonoBehaviour {
         if (canMove)  MoveInputCheck();
   
     }
+    #endregion
 
+    #region Métodos
     private void AnimateAndMove(Vector3 direction, int x, int y)
     {
         anim.SetBool("moving", true);       //Muda o parâmetro moving para verdadeiro, assim o animador começa a rodar animações de movimento
@@ -166,4 +181,5 @@ public class CharMovement : MonoBehaviour {
             }
         }
     }
+    #endregion
 }
