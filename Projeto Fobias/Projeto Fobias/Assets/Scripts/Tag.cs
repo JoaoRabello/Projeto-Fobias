@@ -8,11 +8,10 @@ public class Tag : MonoBehaviour {
 
     public enum Tags
     {
-        cachorro,
-        gato
+        livro,
+        chave
     }
 
-    public Canvas image;
 
     //public Tags[] myTag;          //Multiple tags in one Tag script (tentar implementar depois)
     public Tags myTag;

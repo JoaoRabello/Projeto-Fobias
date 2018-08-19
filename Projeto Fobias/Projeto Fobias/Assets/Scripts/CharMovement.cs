@@ -90,12 +90,12 @@ public class CharMovement : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Item") && col.gameObject.GetComponent<Tag>().GetMyTag() == Tag.Tags.cachorro)  Instantiate(col.gameObject.GetComponent<Tag>().image);      //SISTEMA DE MULTI TAGGING
+        if (col.gameObject.CompareTag("Item"))  col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;      //SISTEMA DE MULTI TAGGING
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Item") && col.gameObject.GetComponent<Tag>().GetMyTag() == Tag.Tags.cachorro) Destroy(GameObject.FindGameObjectWithTag("Item Image"));
+        if (col.gameObject.CompareTag("Item")) col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = false;
     }
     // FixedUpdate é chamado mais vezes que o Update normal, servindo para cálculos físicos (ótimo para evitar colisões estranhas)
     private void FixedUpdate()

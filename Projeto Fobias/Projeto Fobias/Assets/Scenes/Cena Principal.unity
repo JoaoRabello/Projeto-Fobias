@@ -784,9 +784,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 423652966}
-  - component: {fileID: 423652965}
-  - component: {fileID: 423652964}
   - component: {fileID: 423652967}
+  - component: {fileID: 423652964}
+  - component: {fileID: 423652968}
+  - component: {fileID: 423652965}
   m_Layer: 0
   m_Name: Item1
   m_TagString: Item
@@ -805,7 +806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06f92ea6f1345f4d878c4fc339a75da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 223637027556433822, guid: 29cbf12eeac99c64d8d35f1dce6a61d5, type: 2}
   myTag: 0
 --- !u!61 &423652965
 BoxCollider2D:
@@ -830,7 +830,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
 --- !u!4 &423652966
 Transform:
@@ -891,6 +891,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &423652968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423652963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd40eec0c33778649a87514e1a9a9587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canImageSpawn: 0
+  canvasWithImage: {fileID: 223637027556433822, guid: 29cbf12eeac99c64d8d35f1dce6a61d5,
+    type: 2}
 --- !u!1 &462760964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,11 +2177,11 @@ PolygonCollider2D:
       - {x: -6.25, y: -3.579564}
       - {x: -6.4950657, y: -3.9196134}
       - {x: -6.681413, y: -4.2000327}
-      - {x: -5.361535, y: -4.932026}
-      - {x: -4.3005776, y: -4.382195}
-      - {x: -3.795878, y: -4.105503}
-      - {x: -5.159128, y: -3.2987256}
-      - {x: -5.3904195, y: -2.9666939}
+      - {x: -5.2650633, y: -4.974902}
+      - {x: -4.0111623, y: -4.31788}
+      - {x: -4.7177176, y: -3.8911214}
+      - {x: -5.3627896, y: -3.534545}
+      - {x: -5.4440145, y: -2.9666939}
     - - {x: -2.375, y: 3.3125}
       - {x: -2.75, y: 3}
       - {x: -2.7912023, y: 1.5433952}
@@ -3438,7 +3452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06f92ea6f1345f4d878c4fc339a75da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
   myTag: 0
 --- !u!1 &2052232375
 GameObject:
