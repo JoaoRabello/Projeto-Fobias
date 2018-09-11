@@ -39,7 +39,7 @@ public class CharChanger : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.C) && canChange) ChangeChar(charNumber);
-        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+        if (Input.GetKeyDown(KeyCode.KeypadEnter)) Application.Quit();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

@@ -8,10 +8,14 @@ public class ItemImageSpawner : MonoBehaviour {
     [HideInInspector]
     public bool canImageSpawn;
     bool imageSpawned;
+    bool guardianSpawned;
 
     public Canvas canvasWithImage;
 
+    public LibraryGuardian guardian;
+    public Transform guardianPosition;
 	
+
 	void Update () {
         if (Input.GetKeyDown(KeyCode.C) && canImageSpawn && imageSpawned == false)
         {
@@ -37,6 +41,12 @@ public class ItemImageSpawner : MonoBehaviour {
                 Destroy(GameObject.FindGameObjectWithTag("Item Image"));
                 imageSpawned = false;
                 Time.timeScale = 1;
+                if (guardianSpawned == false)
+                {
+                    guardian = Instantiate(guardian, guardianPosition);
+                    guardianSpawned = true;
+                    guardian.OnNotify();
+                }
                 break;
         }
     }

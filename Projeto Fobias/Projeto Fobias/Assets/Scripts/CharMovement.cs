@@ -8,14 +8,21 @@ public class CharMovement : MonoBehaviour {
 
     #region Variáveis
     //Movimento
-    Rigidbody2D rgb;
-    public float speed;
-    Vector3 diagSupEsq;
-    Vector3 diagSupDir;
-    Vector3 diagInfEsq;
-    Vector3 diagInfDir;
-    float cansaco;
-    bool canMove;
+    Rigidbody2D     rgb;
+    public  float   speed;
+    private float   cansaco;
+    private bool    canMove;
+    Vector3         diagSupEsq;
+    Vector3         diagSupDir;
+    Vector3         diagInfEsq;
+    Vector3         diagInfDir;
+
+    //Pânico
+    [SerializeField]
+    private float panico;
+    private bool  emPanico;
+    public float tempo = 3f;
+
 
     //Animação
     Animator anim;
@@ -29,9 +36,10 @@ public class CharMovement : MonoBehaviour {
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
-        speed = 2f;
+        speed   = 2f;
         cansaco = 0f;
         canMove = true;
+        panico  = 0f;
 
         //Vetores para guiarem o char para as diagonais (como na rosa dos ventos NO, NE, SO, SE)
         
@@ -86,16 +94,23 @@ public class CharMovement : MonoBehaviour {
             }
         }
 
+        //Sistema de Pânico
+        if (emPanico)
+        {
+            EntraEmPanico();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Item"))  col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;      //SISTEMA DE MULTI TAGGING
+        if (col.gameObject.CompareTag("Item"))     col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;
+        if (col.gameObject.CompareTag("Guardian")) emPanico = true;
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Item")) col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = false;
+        if (col.gameObject.CompareTag("Guardian")) emPanico = false;
     }
     // FixedUpdate é chamado mais vezes que o Update normal, servindo para cálculos físicos (ótimo para evitar colisões estranhas)
     private void FixedUpdate()
@@ -115,6 +130,15 @@ public class CharMovement : MonoBehaviour {
         anim.SetFloat("y", y);
 
         rgb.transform.Translate(direction * speed * Time.deltaTime);    //Move na direção recebida com a velocidade atual arrumada com deltatime (evita diferenças de velocidade por causa de FPS)
+    }
+
+    private void EntraEmPanico()
+    {
+        if (tempo >= 0)
+        {
+            panico += 0.005f;
+            tempo -= Time.deltaTime;
+        }
     }
 
     private void MoveInputCheck()
