@@ -7,7 +7,7 @@ public class ItemImageSpawner : MonoBehaviour {
 
     [HideInInspector]
     public bool canImageSpawn;
-    bool imageSpawned;
+    public static bool imageSpawned;
     bool guardianSpawned;
 
     public Canvas canvasWithImage;
@@ -28,7 +28,7 @@ public class ItemImageSpawner : MonoBehaviour {
         }
 	}
 
-    void ItemShow(string op)
+    public void ItemShow(string op)
     {
         switch (op)
         {
