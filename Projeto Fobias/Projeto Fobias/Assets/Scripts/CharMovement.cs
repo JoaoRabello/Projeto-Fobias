@@ -23,6 +23,8 @@ public class CharMovement : MonoBehaviour {
     private bool  emPanico;
     public float tempo = 3f;
 
+    //EXCLUIR ESTA PARTE
+    DialogueTrigger dialTrigger;
 
     //Animação
     Animator anim;
@@ -47,7 +49,10 @@ public class CharMovement : MonoBehaviour {
         diagSupDir = new Vector3(1f, 0.5f, 0);
         diagInfEsq = new Vector3(-1f, -0.5f, 0);
         diagInfDir = new Vector3(1f, -0.5f, 0);
-        
+
+
+        //EXCLUIT ESSA PARTE
+        dialTrigger = GetComponent<DialogueTrigger>();
     }
 	
 	// Update é chamado a cada frame
@@ -98,6 +103,11 @@ public class CharMovement : MonoBehaviour {
         if (emPanico)
         {
             EntraEmPanico();
+        }
+
+        if (Input.GetKey(KeyCode.H))
+        {
+            dialTrigger.TriggerDialogue();
         }
     }
 
