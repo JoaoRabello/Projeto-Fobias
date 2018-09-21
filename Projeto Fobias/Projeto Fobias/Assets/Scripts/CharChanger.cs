@@ -18,10 +18,14 @@ public class CharChanger : MonoBehaviour {
     //GameObject pamela;
 
     Animator anim;
+
+    GameController gameController;
     #endregion
 
     private void Awake()
     {
+        gameController = FindObjectOfType<GameController>();
+
         ariel = GameObject.FindGameObjectWithTag("Ariel");
         clarice = GameObject.FindGameObjectWithTag("Clarice");
         clarice.GetComponent<CharMovement>().enabled = false;
@@ -95,6 +99,9 @@ public class CharChanger : MonoBehaviour {
                 SwapChar(ariel, clarice);
                 charNumber = 0;
                 SwapCharNumber();
+
+                gameController.SetActiveChar(0);
+
                 anim.SetBool("ariel-clarice", false);
                 break;
             case 1:
@@ -105,6 +112,9 @@ public class CharChanger : MonoBehaviour {
                 SwapChar(clarice, ariel);
                 charNumber = 2;
                 SwapCharNumber();
+
+                gameController.SetActiveChar(2);
+
                 anim.SetBool("ariel-clarice", true);
                 break;
             case 3:

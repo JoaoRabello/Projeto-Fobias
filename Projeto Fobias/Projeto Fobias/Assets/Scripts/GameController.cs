@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
     public GameObject pauseTextInstance;
     bool onPause;
 
+    int activeChar = 0;
+
     private void Awake()
     {
         pauseTextInstance = GameObject.FindGameObjectWithTag("PauseWindow");
@@ -30,6 +32,16 @@ public class GameController : MonoBehaviour {
         }
         
 	}
+
+    public int GetActiveChar()
+    {
+        return activeChar;
+    }
+
+    public void SetActiveChar(int activeChar)
+    {
+        this.activeChar = activeChar;
+    }
 
     public void Pause()
     {

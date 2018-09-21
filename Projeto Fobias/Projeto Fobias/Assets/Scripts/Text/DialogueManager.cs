@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour {
@@ -9,14 +10,23 @@ public class DialogueManager : MonoBehaviour {
     public bool dialogueEnded;
     private Queue<string> argumentos;
 
+    GameController gc;
+    public Animator boxAnim;
+    public Animator arielImage;
+    public Animator clariceImage;
+
     private void Start()
     {
+        gc = FindObjectOfType<GameController>();
         argumentos = new Queue<string>();
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         dialogueEnded = false;
+        DialogueButton.canPress = true;
+
+        AnimateBox(1);
 
         argumentos.Clear();
 
@@ -33,6 +43,7 @@ public class DialogueManager : MonoBehaviour {
     {
         if(argumentos.Count == 0)
         {
+            Debug.Log(argumentos.Count);
             EndDialogue();
             return;
         }
@@ -44,7 +55,73 @@ public class DialogueManager : MonoBehaviour {
 
     void EndDialogue()
     {
+        AnimateBox(0);
         dialogueEnded = true;
+        DialogueButton.canPress = false;
+    }
+
+    void AnimateBox(int op)
+    {
+        
+        if(op == 1)
+        {
+            
+            AnimatorTriggerSet(1);
+        }
+        else
+        {
+   
+            AnimatorTriggerSet(0);
+        }
+    }
+
+    void AnimatorTriggerSet(int op)
+    {
+        if(op == 1)
+        {
+            boxAnim.SetBool("Open", true);
+            if (gc.GetActiveChar() == 0)
+            {
+                arielImage.SetBool("Open", true);
+            }
+            else
+            {
+                if(gc.GetActiveChar() == 1)
+                {
+                    //ezekielImage.SetTrigger("Open");
+                }
+                else
+                {
+                    if (gc.GetActiveChar() == 2)
+                    {
+                        clariceImage.SetBool("Open", true);
+                    }
+                }
+            }
+        }
+        else
+        {
+            boxAnim.SetBool("Open", false);
+            if (gc.GetActiveChar() == 0)
+            {
+                arielImage.SetBool("Open", false);
+            }
+            else
+            {
+                if (gc.GetActiveChar() == 1)
+                {
+                    //ezekielImage.SetTrigger("Open");
+                }
+                else
+                {
+                    if (gc.GetActiveChar() == 2)
+                    {
+                        clariceImage.SetBool("Open", false);
+                    }
+                }
+            }
+        }
+
     }
 
     IEnumerator TypeSequence(string argumento)
