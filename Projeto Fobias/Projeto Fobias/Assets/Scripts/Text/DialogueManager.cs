@@ -23,6 +23,8 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue(Dialogue dialogue)
     {
+        Time.timeScale = 0;
+
         dialogueEnded = false;
         DialogueButton.canPress = true;
 
@@ -55,6 +57,7 @@ public class DialogueManager : MonoBehaviour {
 
     void EndDialogue()
     {
+        Time.timeScale = 1;
         AnimateBox(0);
         dialogueEnded = true;
         DialogueButton.canPress = false;

@@ -7,6 +7,9 @@ public class CharMovement : MonoBehaviour {
 
 
     #region Variáveis
+
+    GameController gc;
+    
     //Movimento
     Rigidbody2D     rgb;
     public  float   speed;
@@ -24,7 +27,9 @@ public class CharMovement : MonoBehaviour {
     public float tempo = 3f;
 
     //EXCLUIR ESTA PARTE
-    DialogueTrigger dialTrigger;
+    DialogueTrigger readTrigger;
+
+    public bool canDialogue;
 
     //Animação
     Animator anim;
@@ -35,6 +40,8 @@ public class CharMovement : MonoBehaviour {
 
     #region Main
     void Start () {
+        gc = FindObjectOfType<GameController>();
+
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
@@ -50,9 +57,6 @@ public class CharMovement : MonoBehaviour {
         diagInfEsq = new Vector3(-1f, -0.5f, 0);
         diagInfDir = new Vector3(1f, -0.5f, 0);
 
-
-        //EXCLUIT ESSA PARTE
-        dialTrigger = GetComponent<DialogueTrigger>();
     }
 	
 	// Update é chamado a cada frame
@@ -105,9 +109,9 @@ public class CharMovement : MonoBehaviour {
             EntraEmPanico();
         }
 
-        if (Input.GetKey(KeyCode.H))
+        if (Input.GetKey(KeyCode.S) && canDialogue)
         {
-            dialTrigger.TriggerDialogue();
+            readTrigger.TriggerDialogue();
         }
     }
 
@@ -115,12 +119,36 @@ public class CharMovement : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("Item"))     col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;
         if (col.gameObject.CompareTag("Guardian")) emPanico = true;
+
+        //ALTERAR TODA ESSA BAGUNÇA
+        if (col.gameObject.CompareTag("Legivel") && gc.GetActiveChar() == 0)
+        {
+            readTrigger = col.gameObject.GetComponent<DialogueTrigger>();
+            canDialogue = true;
+        }
+        if (col.gameObject.CompareTag("LegivelClarice") && gc.GetActiveChar() == 2)
+        {
+            readTrigger = col.gameObject.GetComponent<DialogueTrigger>();
+            canDialogue = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Item")) col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = false;
         if (col.gameObject.CompareTag("Guardian")) emPanico = false;
+
+        //ALTERAR TODA ESSA BAGUNÇA
+        if (col.gameObject.CompareTag("Legivel") && gc.GetActiveChar() == 0)
+        {
+            readTrigger = null;
+            canDialogue = false;
+        }
+        if (col.gameObject.CompareTag("LegivelClarice") && gc.GetActiveChar() == 2)
+        {
+            readTrigger = null;
+            canDialogue = false;
+        }
     }
     // FixedUpdate é chamado mais vezes que o Update normal, servindo para cálculos físicos (ótimo para evitar colisões estranhas)
     private void FixedUpdate()

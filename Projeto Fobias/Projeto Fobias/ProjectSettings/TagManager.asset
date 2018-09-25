@@ -12,6 +12,8 @@ TagManager:
   - Item Image
   - Guardian
   - PauseWindow
+  - Legivel
+  - LegivelClarice
   layers:
   - Default
   - TransparentFX
