@@ -7,16 +7,19 @@ public class Push : MonoBehaviour {
     public bool playerTouching;
     Transform playerT;
 
+    CharMovement player;
+
 	// Use this for initialization
 	void Start () {
-		
+        player = FindObjectOfType<CharMovement>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKey(KeyCode.S) && playerTouching)
         {
-            transform.SetParent(playerT);
+            //transform.SetParent(playerT);
+            transform.Translate(player.GetDirection()*0.5f*Time.deltaTime);
         }
         else
         {

@@ -14,6 +14,8 @@ TagManager:
   - PauseWindow
   - Legivel
   - LegivelClarice
+  - Door
+  - CameraArea
   layers:
   - Default
   - TransparentFX

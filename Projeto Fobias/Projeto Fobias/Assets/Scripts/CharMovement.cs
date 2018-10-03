@@ -14,11 +14,21 @@ public class CharMovement : MonoBehaviour {
     Rigidbody2D     rgb;
     public  float   speed;
     private float   cansaco;
+    private bool    cansado;
+    private bool    podeRespirar;
     private bool    canMove;
     Vector3         diagSupEsq;
     Vector3         diagSupDir;
     Vector3         diagInfEsq;
     Vector3         diagInfDir;
+    public Vector3  directionExport;
+
+    //Portas
+    bool canUseDoor = false;
+    DoorSystem door;
+
+    //Camera
+    CameraControl camArea;
 
     //Pânico
     [SerializeField]
@@ -36,6 +46,8 @@ public class CharMovement : MonoBehaviour {
 
     //UI
     public Text cansacoText;
+    public Slider cansacoSlider;
+    public Slider panicoSlider;
     #endregion
 
     #region Main
@@ -62,46 +74,7 @@ public class CharMovement : MonoBehaviour {
 	// Update é chamado a cada frame
 	void Update () {
 
-        //Sistema de Corrida e Cansaço
-        if (Input.GetKey(KeyCode.Z) && cansaco < 3f)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
-        {
-            speed = 4f;
-            anim.SetBool("running", true);
-            cansaco += 1f * Time.deltaTime;     //Aqui o cansaço aumenta com o tempo de uso da corrida
-            cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
-        }
-        else
-        {
-            if (Input.GetKeyUp(KeyCode.Z))      //Se o shift esquerdo é liberado, a velocidade volta ao normal
-            {
-                speed = 2f;
-                anim.SetBool("running", false);
-            }
-            else
-            {
-                if (cansaco >= 3f)      //Se o cansaço alcança o máximo, a velocidade também volta ao normal, não podendo correr
-                {
-                    speed = 2f;
-                    anim.SetBool("running", false);
-                }
-            }
-        }
-
-        //Sistema de Respiração
-        if(Input.GetKey(KeyCode.X) && cansaco >= 0)    //Segurar espaço e ter o cansaço acima de zero reduz a velocidade, porém reduz o cansaço com tempo de uso da respiração
-        {
-            canMove = false;
-            anim.SetBool("moving", false);
-            cansaco -= 1f * Time.deltaTime;
-            cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
-        }
-        else
-        {
-            if(Input.GetKeyUp(KeyCode.X) || cansaco <= 0)   //Liberar o espaço ou ter o cansaço zerado faz com que a velocidade retorne ao normal
-            {
-                canMove = true;
-            }
-        }
+        Corre();
 
         //Sistema de Pânico
         if (emPanico)
@@ -113,6 +86,18 @@ public class CharMovement : MonoBehaviour {
         {
             readTrigger.TriggerDialogue();
         }
+
+        if(canUseDoor && Input.GetKeyDown(KeyCode.X))
+        {
+            door.DoorEnter(gameObject);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+
+        if (canMove)  MoveInputCheck();
+  
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -130,6 +115,22 @@ public class CharMovement : MonoBehaviour {
         {
             readTrigger = col.gameObject.GetComponent<DialogueTrigger>();
             canDialogue = true;
+        }
+
+        if (col.gameObject.CompareTag("Door"))
+        {
+            door = col.gameObject.GetComponent<DoorSystem>();
+
+            if (door.GetIsOpen() == true)
+            {
+                canUseDoor = true;
+            }
+        }
+
+        if (col.gameObject.CompareTag("CameraArea"))
+        {
+            camArea = col.gameObject.GetComponent<CameraControl>();
+            camArea.MoveCamera();
         }
     }
 
@@ -149,13 +150,11 @@ public class CharMovement : MonoBehaviour {
             readTrigger = null;
             canDialogue = false;
         }
-    }
-    // FixedUpdate é chamado mais vezes que o Update normal, servindo para cálculos físicos (ótimo para evitar colisões estranhas)
-    private void FixedUpdate()
-    {
 
-        if (canMove)  MoveInputCheck();
-  
+        if (col.gameObject.CompareTag("Door"))
+        {
+            canUseDoor = false;   
+        }
     }
     #endregion
 
@@ -168,15 +167,6 @@ public class CharMovement : MonoBehaviour {
         anim.SetFloat("y", y);
 
         rgb.transform.Translate(direction * speed * Time.deltaTime);    //Move na direção recebida com a velocidade atual arrumada com deltatime (evita diferenças de velocidade por causa de FPS)
-    }
-
-    private void EntraEmPanico()
-    {
-        if (tempo >= 0)
-        {
-            panico += 0.005f;
-            tempo -= Time.deltaTime;
-        }
     }
 
     private void MoveInputCheck()
@@ -193,16 +183,19 @@ public class CharMovement : MonoBehaviour {
             if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal superior esquerda
             {
                 AnimateAndMove(diagSupEsq, -1, 1);
+                directionExport = diagSupEsq;
             }
             else
             {
                 if (Input.GetKey(KeyCode.RightArrow))   //Pressionando também o botão direito, segue para a diagonal superior direita
                 {
                     AnimateAndMove(diagSupDir, 1, 1);
+                    directionExport = diagSupDir;
                 }
                 else        //Se só pressionar o botão para cima, então segue para cima
                 {
                     AnimateAndMove(Vector3.up, 0, 1);
+                    directionExport = Vector3.up;
                 }
             }
         }
@@ -213,16 +206,19 @@ public class CharMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal inferior esquerda
                 {
                     AnimateAndMove(diagInfEsq, -1, -1);
+                    directionExport = diagInfEsq;
                 }
                 else
                 {
                     if (Input.GetKey(KeyCode.RightArrow))   //Pressionando também o botão direito, segue para a diagonal inferior direita
                     {
                         AnimateAndMove(diagInfDir, 1, -1);
+                        directionExport = diagInfDir;
                     }
                     else        //Se só pressionar o botão para baixo, então segue para baixo
                     {
                         AnimateAndMove(Vector3.down, 0, -1);
+                        directionExport = Vector3.down;
                     }
 
                 }
@@ -232,16 +228,94 @@ public class CharMovement : MonoBehaviour {
                 if (Input.GetKey(KeyCode.RightArrow))       //Se pressiona o botão para direita, então anda para direita
                 {
                     AnimateAndMove(Vector3.right, 1, 0);
+                    directionExport = Vector3.right;
                 }
                 else
                 {
                     if (Input.GetKey(KeyCode.LeftArrow))        //Se pressiona o botão para esquerda, então anda para esquerda
                     {
                         AnimateAndMove(Vector3.left, -1, 0);
+                        directionExport = Vector3.left;
                     }
                 }
             }
         }
     }
+
+    private void RecuperaFolego()
+    {
+        cansaco -= 1f * Time.deltaTime;
+        cansacoSlider.value = cansaco;
+        cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
+        Debug.Log("Recuperando folego");
+    }
+
+    private void Corre()
+    {
+        if (Input.GetKey(KeyCode.Z) && cansaco < 3f && cansado == false)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
+        {
+            speed = 4f;
+            anim.SetBool("running", true);
+            cansaco += 1f * Time.deltaTime;     //Aqui o cansaço aumenta com o tempo de uso da corrida
+            cansacoSlider.value = cansaco;
+            cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
+        }
+        else
+        {
+            if (Input.GetKeyUp(KeyCode.Z))      //Se o shift esquerdo é liberado, a velocidade volta ao normal
+            {
+                speed = 2f;
+                anim.SetBool("running", false);
+            }
+            else
+            {
+                if (cansaco >= 3f && cansado == false)      //Se o cansaço alcança o máximo, a velocidade também volta ao normal, não podendo correr
+                {
+                    speed = 2f;
+                    cansado = true;
+
+                    StartCoroutine(EsperaParaRespirar());
+
+                    anim.SetBool("running", false);
+                }
+                else
+                {
+                    if (cansado && podeRespirar)
+                    {
+                        RecuperaFolego();
+                        if (cansaco <= 0)
+                        {
+                            cansado = false;
+                            podeRespirar = false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void EntraEmPanico()
+    {
+        if (tempo >= 0)
+        {
+            panico += 0.005f;
+            panicoSlider.value = panico;
+            tempo -= Time.deltaTime;
+        }
+    }
+
+    public Vector3 GetDirection()
+    {
+        return directionExport;
+    }
+    #endregion
+
+    #region Coroutines
+    IEnumerator EsperaParaRespirar()
+    {
+        yield return new WaitForSeconds(2);
+        podeRespirar = true;
+    }
+    
     #endregion
 }
