@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Push : MonoBehaviour {
 
+    public float pushSpeed;
+
     public bool playerTouching;
+    public bool playerPushing;
     Transform playerT;
 
     CharMovement player;
@@ -16,16 +19,44 @@ public class Push : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.S) && playerTouching)
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            //transform.SetParent(playerT);
-            transform.Translate(player.GetDirection()*0.5f*Time.deltaTime);
+            if (playerPushing == false && playerTouching)
+            {
+                Childer();
+            }
+            else
+            {
+                if (playerPushing)
+                {
+                    UnChild();
+                }
+            }      
         }
-        else
+
+        if( (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) ) && playerPushing)
         {
-            transform.parent = null;
+            player.Cansa();
+            player.speed = pushSpeed;
+            if (player.cansado == true)
+            {
+                UnChild();
+            }
         }
 	}
+
+    void Childer()
+    {
+        transform.SetParent(playerT);
+        playerPushing = true;
+    }
+
+    void UnChild()
+    {
+        player.speed = 2f;
+        transform.SetParent(null);
+        playerPushing = false;
+    }
 
     private void OnCollisionEnter2D(Collision2D col)
     {

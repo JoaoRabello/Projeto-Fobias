@@ -14,7 +14,7 @@ public class CharMovement : MonoBehaviour {
     Rigidbody2D     rgb;
     public  float   speed;
     private float   cansaco;
-    private bool    cansado;
+    public bool     cansado;
     private bool    podeRespirar;
     private bool    canMove;
     Vector3         diagSupEsq;
@@ -247,7 +247,6 @@ public class CharMovement : MonoBehaviour {
         cansaco -= 1f * Time.deltaTime;
         cansacoSlider.value = cansaco;
         cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
-        Debug.Log("Recuperando folego");
     }
 
     private void Corre()
@@ -256,9 +255,7 @@ public class CharMovement : MonoBehaviour {
         {
             speed = 4f;
             anim.SetBool("running", true);
-            cansaco += 1f * Time.deltaTime;     //Aqui o cansaço aumenta com o tempo de uso da corrida
-            cansacoSlider.value = cansaco;
-            cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
+            Cansa();
         }
         else
         {
@@ -291,6 +288,16 @@ public class CharMovement : MonoBehaviour {
                     }
                 }
             }
+        }
+    }
+
+    public void Cansa()
+    {
+        if(cansaco <= 3f)
+        {
+            cansaco += 1f * Time.deltaTime;
+            cansacoSlider.value = cansaco;
+            cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
         }
     }
 

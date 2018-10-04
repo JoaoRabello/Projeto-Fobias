@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-    //public Canvas pauseTextReference;
     public GameObject pauseTextInstance;
     bool onPause;
 
@@ -17,7 +16,6 @@ public class GameController : MonoBehaviour {
         pauseTextInstance.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update () {
         if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && onPause == false)
         {

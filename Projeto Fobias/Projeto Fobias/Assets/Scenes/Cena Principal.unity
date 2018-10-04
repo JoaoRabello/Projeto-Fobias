@@ -1823,9 +1823,9 @@ GameObject:
   m_Component:
   - component: {fileID: 423652966}
   - component: {fileID: 423652967}
+  - component: {fileID: 423652965}
   - component: {fileID: 423652964}
   - component: {fileID: 423652968}
-  - component: {fileID: 423652965}
   - component: {fileID: 423652969}
   m_Layer: 0
   m_Name: Livro
@@ -1846,8 +1846,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTag: 0
---- !u!61 &423652965
-BoxCollider2D:
+--- !u!60 &423652965
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1868,9 +1868,15 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.34375, y: 0.28125}
+      - {x: -0.31694293, y: 0.29465333}
+      - {x: -1.2149594, y: -0.40187895}
+      - {x: 0.02658844, y: -0.7905724}
+      - {x: 0.30353975, y: -0.63876617}
+      - {x: 0.46437907, y: 0.0042982996}
+      - {x: -0.06723404, y: 0.48229834}
 --- !u!4 &423652966
 Transform:
   m_ObjectHideFlags: 0
@@ -4025,8 +4031,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1041874776}
   - component: {fileID: 1041874775}
-  - component: {fileID: 1041874774}
   - component: {fileID: 1041874777}
+  - component: {fileID: 1041874774}
   m_Layer: 0
   m_Name: Planta_Teste_Empurrar
   m_TagString: Untagged
@@ -4034,8 +4040,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!70 &1041874774
-CapsuleCollider2D:
+--- !u!60 &1041874774
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -4046,9 +4052,25 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022543907, y: -0.33938408}
-  m_Size: {x: 0.53647816, y: 0.6630602}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0625, y: 1.6875}
+    newSize: {x: 1.0625, y: 1.6875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.03657329, y: -0.17720377}
+      - {x: -0.408244, y: -0.43651438}
+      - {x: -0.32213902, y: -0.631649}
+      - {x: -0.12134147, y: -0.6459429}
+      - {x: 0.08543682, y: -0.6582434}
+      - {x: 0.26063573, y: -0.48005414}
+      - {x: 0.16223049, y: -0.20180535}
 --- !u!212 &1041874775
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4119,7 +4141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f101af25b823c7b478a5137ae537d8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushSpeed: 1
   playerTouching: 0
+  playerPushing: 0
 --- !u!1 &1054553368
 GameObject:
   m_ObjectHideFlags: 0
@@ -6319,6 +6343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  cansado: 0
   directionExport: {x: 0, y: 0, z: 0}
   panico: 0
   tempo: 3
@@ -7058,6 +7083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  cansado: 0
   directionExport: {x: 0, y: 0, z: 0}
   panico: 0
   tempo: 3
@@ -8038,8 +8064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.7, y: -75.67}
-  m_SizeDelta: {x: 203.5, y: 125.14}
+  m_AnchoredPosition: {x: 116.7, y: -88.44}
+  m_SizeDelta: {x: 203.5, y: 150.69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2117904544
 MonoBehaviour:
@@ -8073,13 +8099,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Mini Tutorial:
-
-    Z: Corre
-
-    X: Interage com Portas
-
-    C: Interage'
+  m_Text: "Mini Tutorial:\nZ: Corre\nX: A\xE7\xF5es\nC: Intera\xE7\xF5es"
 --- !u!222 &2117904545
 CanvasRenderer:
   m_ObjectHideFlags: 0
