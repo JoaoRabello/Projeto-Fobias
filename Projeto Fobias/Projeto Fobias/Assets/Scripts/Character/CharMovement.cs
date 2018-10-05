@@ -9,6 +9,9 @@ public class CharMovement : MonoBehaviour {
     #region Variáveis
 
     GameController gc;
+
+    //Inventario
+    Inventario inventario;
     
     //Movimento
     Rigidbody2D     rgb;
@@ -17,6 +20,7 @@ public class CharMovement : MonoBehaviour {
     public bool     cansado;
     private bool    podeRespirar;
     private bool    canMove;
+    public bool     moving;
     Vector3         diagSupEsq;
     Vector3         diagSupDir;
     Vector3         diagInfEsq;
@@ -24,7 +28,7 @@ public class CharMovement : MonoBehaviour {
     public Vector3  directionExport;
 
     //Portas
-    bool canUseDoor = false;
+    bool canUseDoor;
     DoorSystem door;
 
     //Camera
@@ -34,9 +38,8 @@ public class CharMovement : MonoBehaviour {
     [SerializeField]
     private float panico;
     private bool  emPanico;
-    public float tempo = 3f;
 
-    //EXCLUIR ESTA PARTE
+    //Diálogo
     DialogueTrigger readTrigger;
 
     public bool canDialogue;
@@ -56,22 +59,23 @@ public class CharMovement : MonoBehaviour {
 
         rgb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        inventario = GetComponent<Inventario>();
 
         speed   = 2f;
         cansaco = 0f;
         canMove = true;
+        canUseDoor = false;
         panico  = 0f;
 
         //Vetores para guiarem o char para as diagonais (como na rosa dos ventos NO, NE, SO, SE)
         
-        diagSupEsq = new Vector3(-1f, 0.5f, 0);
-        diagSupDir = new Vector3(1f, 0.5f, 0);
-        diagInfEsq = new Vector3(-1f, -0.5f, 0);
-        diagInfDir = new Vector3(1f, -0.5f, 0);
+        diagSupEsq = new Vector3(-1f, 0.5f);
+        diagSupDir = new Vector3(1f, 0.5f);
+        diagInfEsq = new Vector3(-1f, -0.5f);
+        diagInfDir = new Vector3(1f, -0.5f);
 
     }
 	
-	// Update é chamado a cada frame
 	void Update () {
 
         Corre();
@@ -79,7 +83,7 @@ public class CharMovement : MonoBehaviour {
         //Sistema de Pânico
         if (emPanico)
         {
-            EntraEmPanico();
+            EntraEmPanico(0.005f);
         }
 
         if (Input.GetKey(KeyCode.S) && canDialogue)
@@ -102,8 +106,9 @@ public class CharMovement : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Item"))     col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;
-        if (col.gameObject.CompareTag("Guardian")) emPanico = true;
+        if (col.gameObject.CompareTag("Item"))      col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;
+        if (col.gameObject.CompareTag("Guardian"))  emPanico = true;
+
 
         //ALTERAR TODA ESSA BAGUNÇA
         if (col.gameObject.CompareTag("Legivel") && gc.GetActiveChar() == 0)
@@ -116,6 +121,8 @@ public class CharMovement : MonoBehaviour {
             readTrigger = col.gameObject.GetComponent<DialogueTrigger>();
             canDialogue = true;
         }
+        //ALTERAR TODA ESSA BAGUNÇA
+
 
         if (col.gameObject.CompareTag("Door"))
         {
@@ -162,6 +169,7 @@ public class CharMovement : MonoBehaviour {
     private void AnimateAndMove(Vector3 direction, int x, int y)
     {
         anim.SetBool("moving", true);       //Muda o parâmetro moving para verdadeiro, assim o animador começa a rodar animações de movimento
+        moving = true;
 
         anim.SetFloat("x", x);  //Coloca no parâmetro x o valor recebido como x
         anim.SetFloat("y", y);
@@ -171,11 +179,6 @@ public class CharMovement : MonoBehaviour {
 
     private void MoveInputCheck()
     {
-        if (!Input.anyKey)
-        {
-            anim.SetBool("moving", false);
-        }
-
         //Sistema de Movimentação
 
         if (Input.GetKey(KeyCode.UpArrow))      //Se pressiona o botão para cima, então anda para cima
@@ -237,6 +240,11 @@ public class CharMovement : MonoBehaviour {
                         AnimateAndMove(Vector3.left, -1, 0);
                         directionExport = Vector3.left;
                     }
+                    else
+                    {
+                        anim.SetBool("moving", false);
+                        moving = false;
+                    }
                 }
             }
         }
@@ -251,7 +259,7 @@ public class CharMovement : MonoBehaviour {
 
     private void Corre()
     {
-        if (Input.GetKey(KeyCode.Z) && cansaco < 3f && cansado == false)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
+        if (Input.GetKey(KeyCode.Z) && moving && cansaco < 3f && cansado == false)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
         {
             speed = 4f;
             anim.SetBool("running", true);
@@ -259,31 +267,38 @@ public class CharMovement : MonoBehaviour {
         }
         else
         {
-            if (Input.GetKeyUp(KeyCode.Z))      //Se o shift esquerdo é liberado, a velocidade volta ao normal
+            if (moving == false && Input.GetKey(KeyCode.Z))
             {
-                speed = 2f;
                 anim.SetBool("running", false);
             }
             else
             {
-                if (cansaco >= 3f && cansado == false)      //Se o cansaço alcança o máximo, a velocidade também volta ao normal, não podendo correr
+                if (Input.GetKeyUp(KeyCode.Z))      
                 {
                     speed = 2f;
-                    cansado = true;
-
-                    StartCoroutine(EsperaParaRespirar());
-
                     anim.SetBool("running", false);
                 }
                 else
                 {
-                    if (cansado && podeRespirar)
+                    if (cansaco >= 3f && cansado == false)      //Se o cansaço alcança o máximo, a velocidade também volta ao normal, não podendo correr
                     {
-                        RecuperaFolego();
-                        if (cansaco <= 0)
+                        speed = 2f;
+                        cansado = true;
+
+                        StartCoroutine(EsperaParaRespirar());
+
+                        anim.SetBool("running", false);
+                    }
+                    else
+                    {
+                        if (cansado && podeRespirar)
                         {
-                            cansado = false;
-                            podeRespirar = false;
+                            RecuperaFolego();
+                            if (cansaco <= 0)
+                            {
+                                cansado = false;
+                                podeRespirar = false;
+                            }
                         }
                     }
                 }
@@ -301,14 +316,10 @@ public class CharMovement : MonoBehaviour {
         }
     }
 
-    private void EntraEmPanico()
+    private void EntraEmPanico(float valorPanico)
     {
-        if (tempo >= 0)
-        {
-            panico += 0.005f;
-            panicoSlider.value = panico;
-            tempo -= Time.deltaTime;
-        }
+        panico += valorPanico;
+        panicoSlider.value = panico;
     }
 
     public Vector3 GetDirection()
