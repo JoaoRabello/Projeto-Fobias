@@ -17,15 +17,15 @@ public class Depth : MonoBehaviour {
         m_spriteHalfWidht = spRenderer.bounds.size.x * 0.5f;
 	}
 
-    #if UNITY_EDITOR
+
     void LateUpdate()
     {
-        if (!Application.isPlayer)
+        if (!Application.isEditor)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, (transform.position.y - m_spriteLowerBound + m_floorHeight) * m_tan30);
         }
     }
-    #endif
+
 
     void OnDrawGizmos()
     {

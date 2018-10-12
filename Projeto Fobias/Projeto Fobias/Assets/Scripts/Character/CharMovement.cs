@@ -86,7 +86,7 @@ public class CharMovement : MonoBehaviour {
             EntraEmPanico(0.005f);
         }
 
-        if (Input.GetKey(KeyCode.S) && canDialogue)
+        if (Input.GetKey(KeyCode.X) && canDialogue)
         {
             readTrigger.TriggerDialogue();
         }
@@ -180,17 +180,17 @@ public class CharMovement : MonoBehaviour {
     private void MoveInputCheck()
     {
         //Sistema de Movimentação
-
-        if (Input.GetKey(KeyCode.UpArrow))      //Se pressiona o botão para cima, então anda para cima
+        
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))      //Se pressiona o botão para cima, então anda para cima
         {
-            if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal superior esquerda
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))   //Pressionando também o botão esquerdo, segue para a diagonal superior esquerda
             {
                 AnimateAndMove(diagSupEsq, -1, 1);
                 directionExport = diagSupEsq;
             }
             else
             {
-                if (Input.GetKey(KeyCode.RightArrow))   //Pressionando também o botão direito, segue para a diagonal superior direita
+                if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))   //Pressionando também o botão direito, segue para a diagonal superior direita
                 {
                     AnimateAndMove(diagSupDir, 1, 1);
                     directionExport = diagSupDir;
@@ -204,16 +204,16 @@ public class CharMovement : MonoBehaviour {
         }
         else
         {
-            if (Input.GetKey(KeyCode.DownArrow))        //Se pressiona o botão para baixo, então anda para baixo
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))        //Se pressiona o botão para baixo, então anda para baixo
             {
-                if (Input.GetKey(KeyCode.LeftArrow))   //Pressionando também o botão esquerdo, segue para a diagonal inferior esquerda
+                if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))   //Pressionando também o botão esquerdo, segue para a diagonal inferior esquerda
                 {
                     AnimateAndMove(diagInfEsq, -1, -1);
                     directionExport = diagInfEsq;
                 }
                 else
                 {
-                    if (Input.GetKey(KeyCode.RightArrow))   //Pressionando também o botão direito, segue para a diagonal inferior direita
+                    if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))   //Pressionando também o botão direito, segue para a diagonal inferior direita
                     {
                         AnimateAndMove(diagInfDir, 1, -1);
                         directionExport = diagInfDir;
@@ -228,14 +228,14 @@ public class CharMovement : MonoBehaviour {
             }
             else
             {
-                if (Input.GetKey(KeyCode.RightArrow))       //Se pressiona o botão para direita, então anda para direita
+                if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))       //Se pressiona o botão para direita, então anda para direita
                 {
                     AnimateAndMove(Vector3.right, 1, 0);
                     directionExport = Vector3.right;
                 }
                 else
                 {
-                    if (Input.GetKey(KeyCode.LeftArrow))        //Se pressiona o botão para esquerda, então anda para esquerda
+                    if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))        //Se pressiona o botão para esquerda, então anda para esquerda
                     {
                         AnimateAndMove(Vector3.left, -1, 0);
                         directionExport = Vector3.left;

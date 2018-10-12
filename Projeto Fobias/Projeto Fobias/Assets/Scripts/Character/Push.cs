@@ -19,7 +19,7 @@ public class Push : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             if (playerPushing == false && playerTouching)
             {
@@ -34,7 +34,9 @@ public class Push : MonoBehaviour {
             }      
         }
 
-        if( (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) ) && playerPushing)
+        if(  ( ( Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) ) ||
+               ( Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) ) )
+               && playerPushing)
         {
             player.Cansa();
             player.speed = pushSpeed;
