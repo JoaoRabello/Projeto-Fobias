@@ -106,7 +106,7 @@ public class CharMovement : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Item"))      col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;
+        if (col.gameObject.CompareTag("Item"))      if(col.gameObject.GetComponent<ItemImageSpawner>() == true) col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;
         if (col.gameObject.CompareTag("Guardian"))  emPanico = true;
 
 
@@ -128,10 +128,15 @@ public class CharMovement : MonoBehaviour {
         {
             door = col.gameObject.GetComponent<DoorSystem>();
 
-            if (door.GetIsOpen() == true)
+            if (door.GetIsOpen() == false)
             {
-                canUseDoor = true;
+                if (inventario.GetItemInventário("Chave") == true)
+                {
+                    canUseDoor = true;
+                }
             }
+            else
+                canUseDoor = true;
         }
 
         if (col.gameObject.CompareTag("CameraArea"))
@@ -143,7 +148,7 @@ public class CharMovement : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Item")) col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = false;
+        if (col.gameObject.CompareTag("Item")) if (col.gameObject.GetComponent<ItemImageSpawner>() == true) col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = false;
         if (col.gameObject.CompareTag("Guardian")) emPanico = false;
 
         //ALTERAR TODA ESSA BAGUNÇA

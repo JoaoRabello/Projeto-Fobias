@@ -5,6 +5,7 @@ public class DoorSystem : MonoBehaviour {
     public bool isOpen;
     public GameObject doorDestiny;
 
+
     public bool GetIsOpen()
     {
         return isOpen;

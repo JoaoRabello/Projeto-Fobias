@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Inventario : MonoBehaviour
 {
-    int[] invSpaces = new int[2];
+    String[] invSpaces = new String[2];
 
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -13,8 +14,37 @@ public class Inventario : MonoBehaviour
             {
                 if (!InventarioFull())
                 {
-                    //Pega chave
+                    EncheInventário("Chave");
+                    Destroy(col.gameObject);
                 }
+            }
+        }
+    }
+
+    public bool GetItemInventário(String item)
+    {
+        int i;
+
+        for (i = 0; i < invSpaces.Length; i++)
+        {
+            if (invSpaces[i] == item)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void EncheInventário(String nomeItem)
+    {
+        int i;
+
+        for (i = 0; i < invSpaces.Length; i++)
+        {
+            if (invSpaces[i] == null)
+            {
+                invSpaces[i] = nomeItem;
+                return;
             }
         }
     }
@@ -24,9 +54,9 @@ public class Inventario : MonoBehaviour
         int i;
         int count = 0;
 
-        for (i = 0; i<=invSpaces.Length; i++)
+        for (i = 0; i<invSpaces.Length; i++)
         {
-            if(invSpaces[i] != 0)
+            if(invSpaces[i] != null)
             {
                 count++;
             }

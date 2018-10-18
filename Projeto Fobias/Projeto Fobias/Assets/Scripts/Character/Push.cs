@@ -14,7 +14,7 @@ public class Push : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = FindObjectOfType<CharMovement>();
+        
 	}
 	
 	// Update is called once per frame
@@ -65,6 +65,7 @@ public class Push : MonoBehaviour {
         if (col.gameObject.CompareTag("Clarice") || col.gameObject.CompareTag("Ariel")){
             playerTouching = true;
             playerT = col.gameObject.transform;
+            player = col.gameObject.GetComponent<CharMovement>();
         }
     }
 
