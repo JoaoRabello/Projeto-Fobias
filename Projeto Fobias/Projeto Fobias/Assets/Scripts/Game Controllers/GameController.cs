@@ -17,13 +17,18 @@ public class GameController : MonoBehaviour {
     }
 
     void Update () {
-        if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && onPause == false)
+
+        bool pKeyDown = Input.GetKeyDown(KeyCode.P);
+        bool escKeyDown = Input.GetKeyDown(KeyCode.Escape);
+        bool pauseKeyDown = Input.GetKeyDown("joystick button 9");
+
+        if ((pKeyDown || escKeyDown || pauseKeyDown) && onPause == false)
         {
             Pause();
         }
         else
         {
-            if(Input.GetKeyDown(KeyCode.Escape) && onPause)
+            if((escKeyDown || pauseKeyDown) && onPause)
             {
                 Unpause();
             }

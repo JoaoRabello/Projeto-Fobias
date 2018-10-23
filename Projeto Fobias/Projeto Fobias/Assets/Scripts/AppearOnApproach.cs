@@ -13,7 +13,6 @@ public class AppearOnApproach : MonoBehaviour {
         spColor = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update () {
         aValue = Vector3.Distance(player.transform.position, approachPoint.position)/3;
         spColor.color = new Color(1, 1, 1, aValue);

@@ -48,7 +48,6 @@ public class CharMovement : MonoBehaviour {
     Animator anim;
 
     //UI
-    public Text cansacoText;
     public Slider cansacoSlider;
     public Slider panicoSlider;
     #endregion
@@ -78,6 +77,11 @@ public class CharMovement : MonoBehaviour {
 	
 	void Update () {
 
+        bool xKey               = Input.GetKey(KeyCode.X);
+        bool xDownKey           = Input.GetKeyDown(KeyCode.X);
+        bool joyInteractKey     = Input.GetKey("joystick button 1");
+        bool joyInteractDownKey = Input.GetKeyDown("joystick button 1");
+
         Corre();
 
         //Sistema de Pânico
@@ -86,12 +90,12 @@ public class CharMovement : MonoBehaviour {
             EntraEmPanico(0.005f);
         }
 
-        if (Input.GetKey(KeyCode.X) && canDialogue)
+        if ((xKey || joyInteractKey) && canDialogue)
         {
             readTrigger.TriggerDialogue();
         }
 
-        if(canUseDoor && Input.GetKeyDown(KeyCode.X))
+        if(canUseDoor && (xDownKey || joyInteractDownKey))
         {
             door.DoorEnter(gameObject);
         }
@@ -171,6 +175,11 @@ public class CharMovement : MonoBehaviour {
     #endregion
 
     #region Métodos
+    public void setCanMove(bool value)
+    {
+        canMove = value;
+    }
+
     private void AnimateAndMove(Vector3 direction, int x, int y)
     {
         anim.SetBool("moving", true);       //Muda o parâmetro moving para verdadeiro, assim o animador começa a rodar animações de movimento
@@ -184,23 +193,24 @@ public class CharMovement : MonoBehaviour {
 
     private void MoveInputCheck()
     {
-        //Sistema de Movimentação
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical   = Input.GetAxisRaw("Vertical");
         
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))      //Se pressiona o botão para cima, então anda para cima
+        if (vertical > 0)      
         {
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))   //Pressionando também o botão esquerdo, segue para a diagonal superior esquerda
+            if (horizontal < 0)   
             {
                 AnimateAndMove(diagSupEsq, -1, 1);
                 directionExport = diagSupEsq;
             }
             else
             {
-                if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))   //Pressionando também o botão direito, segue para a diagonal superior direita
+                if (horizontal > 0)  
                 {
                     AnimateAndMove(diagSupDir, 1, 1);
                     directionExport = diagSupDir;
                 }
-                else        //Se só pressionar o botão para cima, então segue para cima
+                else        
                 {
                     AnimateAndMove(Vector3.up, 0, 1);
                     directionExport = Vector3.up;
@@ -209,21 +219,21 @@ public class CharMovement : MonoBehaviour {
         }
         else
         {
-            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))        //Se pressiona o botão para baixo, então anda para baixo
+            if (vertical < 0)       
             {
-                if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))   //Pressionando também o botão esquerdo, segue para a diagonal inferior esquerda
+                if (horizontal < 0)  
                 {
                     AnimateAndMove(diagInfEsq, -1, -1);
                     directionExport = diagInfEsq;
                 }
                 else
                 {
-                    if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))   //Pressionando também o botão direito, segue para a diagonal inferior direita
+                    if (horizontal > 0)   
                     {
                         AnimateAndMove(diagInfDir, 1, -1);
                         directionExport = diagInfDir;
                     }
-                    else        //Se só pressionar o botão para baixo, então segue para baixo
+                    else        
                     {
                         AnimateAndMove(Vector3.down, 0, -1);
                         directionExport = Vector3.down;
@@ -233,14 +243,14 @@ public class CharMovement : MonoBehaviour {
             }
             else
             {
-                if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))       //Se pressiona o botão para direita, então anda para direita
+                if (horizontal > 0)       
                 {
                     AnimateAndMove(Vector3.right, 1, 0);
                     directionExport = Vector3.right;
                 }
                 else
                 {
-                    if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))        //Se pressiona o botão para esquerda, então anda para esquerda
+                    if (horizontal < 0)        
                     {
                         AnimateAndMove(Vector3.left, -1, 0);
                         directionExport = Vector3.left;
@@ -259,12 +269,15 @@ public class CharMovement : MonoBehaviour {
     {
         cansaco -= 1f * Time.deltaTime;
         cansacoSlider.value = cansaco;
-        cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
     }
 
     private void Corre()
     {
-        if (Input.GetKey(KeyCode.Z) && moving && cansaco < 3f && cansado == false)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
+        bool botaoCorrida = Input.GetKey(KeyCode.Z);
+        bool joyCorrida = Input.GetKey("joystick button 2");
+        
+
+        if ((botaoCorrida || joyCorrida) && moving && cansaco < 3f && cansado == false)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
         {
             speed = 4f;
             anim.SetBool("running", true);
@@ -272,13 +285,13 @@ public class CharMovement : MonoBehaviour {
         }
         else
         {
-            if (moving == false && Input.GetKey(KeyCode.Z))
+            if (moving == false && (botaoCorrida || joyCorrida))
             {
                 anim.SetBool("running", false);
             }
             else
             {
-                if (Input.GetKeyUp(KeyCode.Z))      
+                if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp("joystick button 2"))      
                 {
                     speed = 2f;
                     anim.SetBool("running", false);
@@ -317,7 +330,6 @@ public class CharMovement : MonoBehaviour {
         {
             cansaco += 1f * Time.deltaTime;
             cansacoSlider.value = cansaco;
-            cansacoText.text = "Cansaço: " + cansaco.ToString("F1");
         }
     }
 

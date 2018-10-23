@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Push : MonoBehaviour {
 
@@ -12,14 +10,14 @@ public class Push : MonoBehaviour {
 
     CharMovement player;
 
-	// Use this for initialization
-	void Start () {
-        
-	}
-	
-	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.X))
+
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        bool xDownKey = Input.GetKeyDown(KeyCode.X);
+        bool joyInteractDownKey = Input.GetKeyDown("joystick button 1");
+
+        if (xDownKey || joyInteractDownKey)
         {
             if (playerPushing == false && playerTouching)
             {
@@ -34,9 +32,7 @@ public class Push : MonoBehaviour {
             }      
         }
 
-        if(  ( ( Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) ) ||
-               ( Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) ) )
-               && playerPushing)
+        if((horizontal != 0 || vertical != 0 ) && playerPushing)
         {
             player.Cansa();
             player.speed = pushSpeed;
