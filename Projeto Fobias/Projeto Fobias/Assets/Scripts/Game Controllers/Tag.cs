@@ -9,7 +9,8 @@ public class Tag : MonoBehaviour {
     public enum Tags
     {
         livro,
-        chave
+        chave1,
+        chave2
     }
 
 

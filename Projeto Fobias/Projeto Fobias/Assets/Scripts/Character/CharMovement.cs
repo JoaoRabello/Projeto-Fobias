@@ -7,7 +7,6 @@ public class CharMovement : MonoBehaviour {
 
 
     #region Variáveis
-
     GameController gc;
 
     //Inventario
@@ -134,7 +133,7 @@ public class CharMovement : MonoBehaviour {
 
             if (door.GetIsOpen() == false)
             {
-                if (inventario.GetItemInventário("Chave") == true)
+                if (inventario.GetItemInventário("Chave1") == true)
                 {
                     canUseDoor = true;
                 }
@@ -147,6 +146,7 @@ public class CharMovement : MonoBehaviour {
         {
             camArea = col.gameObject.GetComponent<CameraControl>();
             camArea.MoveCamera();
+            camArea.Resize();
         }
     }
 
@@ -169,7 +169,7 @@ public class CharMovement : MonoBehaviour {
 
         if (col.gameObject.CompareTag("Door"))
         {
-            canUseDoor = false;   
+            canUseDoor = false;
         }
     }
     #endregion

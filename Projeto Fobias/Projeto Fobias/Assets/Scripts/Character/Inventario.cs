@@ -1,22 +1,40 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class InventoryEvent : UnityEvent{
+}
+
 
 public class Inventario : MonoBehaviour
 {
     String[] invSpaces = new String[2];
 
+    public InventoryEvent keyEvent;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Item"))
         {
-            if (col.GetComponent<Tag>().GetMyTag() == Tag.Tags.chave)
+            Tag.Tags tag = col.GetComponent<Tag>().GetMyTag();
+            switch (tag)
             {
-                if (!InventarioFull())
-                {
-                    EncheInventário("Chave");
-                    Destroy(col.gameObject);
-                }
+                case Tag.Tags.chave1:
+                    if (!InventarioFull())
+                    {
+                        EncheInventário("Chave1");
+                        Destroy(col.gameObject);
+                        keyEvent.Invoke();
+                    }
+                    break;
+                case Tag.Tags.chave2:
+                    if (!InventarioFull())
+                    {
+                        EncheInventário("Chave2");
+                        Destroy(col.gameObject);
+                    }
+                    break;
             }
         }
     }
@@ -44,6 +62,20 @@ public class Inventario : MonoBehaviour
             if (invSpaces[i] == null)
             {
                 invSpaces[i] = nomeItem;
+                return;
+            }
+        }
+    }
+
+    public void RemoveItem(String nomeItem)
+    {
+        int i;
+
+        for (i = 0; i < invSpaces.Length; i++)
+        {
+            if (invSpaces[i] == nomeItem)
+            {
+                invSpaces[i] = null;
                 return;
             }
         }
