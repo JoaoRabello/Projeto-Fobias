@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class InitialScreenController : MonoBehaviour {
 
+    public ScreenLoader sLoader;
+
 	public void Play()
     {
-        SceneManager.LoadScene(1);
+        sLoader.LoadLevel(1);
     }
 
     public void Options()

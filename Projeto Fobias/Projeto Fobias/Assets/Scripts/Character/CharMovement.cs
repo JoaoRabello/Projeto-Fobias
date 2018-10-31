@@ -96,7 +96,17 @@ public class CharMovement : MonoBehaviour {
 
         if(canUseDoor && (xDownKey || joyInteractDownKey))
         {
-            door.DoorEnter(gameObject);
+            if (door.GetIsLocked())
+            {
+                string key = door.GetKeyName();
+                if (inventario.GetItemInventário(key))
+                {
+                    door.Unlock();
+                    door.DoorEnter(gameObject);
+                }
+            }
+            else
+                door.DoorEnter(gameObject);
         }
     }
 
@@ -130,16 +140,7 @@ public class CharMovement : MonoBehaviour {
         if (col.gameObject.CompareTag("Door"))
         {
             door = col.gameObject.GetComponent<DoorSystem>();
-
-            if (door.GetIsOpen() == false)
-            {
-                if (inventario.GetItemInventário("Chave1") == true)
-                {
-                    canUseDoor = true;
-                }
-            }
-            else
-                canUseDoor = true;
+            canUseDoor = true;
         }
 
         if (col.gameObject.CompareTag("CameraArea"))

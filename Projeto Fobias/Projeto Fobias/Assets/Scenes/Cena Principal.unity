@@ -1995,8 +1995,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000029325, y: -0.00001049}
-  m_SizeDelta: {x: 79.34, y: 79.334}
+  m_AnchoredPosition: {x: 0.0000097752, y: 3.1}
+  m_SizeDelta: {x: 52.02, y: 52.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216980776
 MonoBehaviour:
@@ -2322,7 +2322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a3d545c039a814685552ae866c529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 1
+  isLocked: 0
+  keyName: 
   hasAnim: 0
   doorDestiny: {fileID: 573499545}
 --- !u!4 &235965621
@@ -2483,7 +2484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a3d545c039a814685552ae866c529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 1
+  isLocked: 0
+  keyName: 
   hasAnim: 1
   doorDestiny: {fileID: 1068673165}
 --- !u!58 &284187480
@@ -2621,7 +2623,7 @@ GameObject:
   - component: {fileID: 314170815}
   - component: {fileID: 314170819}
   m_Layer: 0
-  m_Name: CHAVE
+  m_Name: "Arm\xE1rio de Vassouras: Chave 1"
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2882,7 +2884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.3, y: -2.5}
+  m_AnchoredPosition: {x: 0.0000030994, y: -2.1}
   m_SizeDelta: {x: 35.8, y: 9.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &328881343
@@ -4129,7 +4131,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a3d545c039a814685552ae866c529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 1
+  isLocked: 0
+  keyName: 
   hasAnim: 0
   doorDestiny: {fileID: 235965618}
 --- !u!4 &573499548
@@ -4405,7 +4408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a3d545c039a814685552ae866c529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 0
+  isLocked: 1
+  keyName: Chave1
   hasAnim: 1
   doorDestiny: {fileID: 1644128257}
 --- !u!58 &595493228
@@ -6210,7 +6214,7 @@ GameObject:
   - component: {fileID: 869488644}
   - component: {fileID: 869488643}
   m_Layer: 0
-  m_Name: detergente
+  m_Name: "Arm\xE1rio de Vassouras: Detergente"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6550,8 +6554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_AnchoredPosition: {x: -1.3899994, y: -0.13999939}
+  m_SizeDelta: {x: 2.77, y: -3.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &909641609
 MonoBehaviour:
@@ -7982,7 +7986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a3d545c039a814685552ae866c529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 1
+  isLocked: 0
+  keyName: 
   hasAnim: 0
   doorDestiny: {fileID: 284187477}
 --- !u!58 &1068673168
@@ -9557,7 +9562,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a3d545c039a814685552ae866c529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 1
+  isLocked: 0
+  keyName: 
   hasAnim: 1
   doorDestiny: {fileID: 1732041016}
 --- !u!58 &1317113498
@@ -10883,7 +10889,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1593515900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11335,7 +11341,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a3d545c039a814685552ae866c529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 1
+  isLocked: 0
+  keyName: 
   hasAnim: 0
   doorDestiny: {fileID: 595493225}
 --- !u!4 &1644128260
@@ -11874,7 +11881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a3d545c039a814685552ae866c529a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOpen: 1
+  isLocked: 0
+  keyName: 
   hasAnim: 0
   doorDestiny: {fileID: 1317113495}
 --- !u!58 &1732041018
@@ -12168,7 +12176,7 @@ GameObject:
   - component: {fileID: 1823390313}
   - component: {fileID: 1823390314}
   m_Layer: 0
-  m_Name: poca
+  m_Name: "Arm\xE1rio de Vassouras: Po\xE7a"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12696,10 +12704,10 @@ RectTransform:
   m_Father: {fileID: 1062447790}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -131.56, y: -140.1}
-  m_SizeDelta: {x: 225.88, y: 64.6}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 113.57, y: -105.22}
+  m_SizeDelta: {x: 160.26, y: 45.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1847086420
 MonoBehaviour:
@@ -13250,10 +13258,10 @@ RectTransform:
   m_Father: {fileID: 1062447790}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -138.72, y: -67}
-  m_SizeDelta: {x: 240.2, y: 69.737}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 107.3, y: -57.2}
+  m_SizeDelta: {x: 172.8, y: 50.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1921147996
 MonoBehaviour:
@@ -13858,8 +13866,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -68.899994, y: -235.25}
-  m_SizeDelta: {x: 99.099976, y: 99.100006}
+  m_AnchoredPosition: {x: -50.8, y: -62.9}
+  m_SizeDelta: {x: 64.4, y: 64.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093308471
 MonoBehaviour:

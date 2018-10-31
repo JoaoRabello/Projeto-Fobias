@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class DoorSystem : MonoBehaviour {
 
-    public bool isOpen;
+    public bool isLocked;
+    public string keyName;
+
     public bool hasAnim;
     public GameObject doorDestiny;
     Animator anim;
@@ -12,9 +14,20 @@ public class DoorSystem : MonoBehaviour {
     {
         anim = GetComponentInParent<Animator>();
     }
-    public bool GetIsOpen()
+
+    public bool GetIsLocked()
     {
-        return isOpen;
+        return isLocked;
+    }
+
+    public string GetKeyName()
+    {
+        return keyName;
+    }
+
+    public void Unlock()
+    {
+        isLocked = false;
     }
 
     public void DoorEnter(GameObject player)
