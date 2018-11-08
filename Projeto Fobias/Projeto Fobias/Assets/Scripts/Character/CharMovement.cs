@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,8 +17,10 @@ public class CharMovement : MonoBehaviour {
     private float   cansaco;
     public bool     cansado;
     private bool    podeRespirar;
+
     private bool    canMove;
     public bool     moving;
+
     Vector3         diagSupEsq;
     Vector3         diagSupDir;
     Vector3         diagInfEsq;
@@ -59,11 +60,11 @@ public class CharMovement : MonoBehaviour {
         anim = GetComponent<Animator>();
         inventario = GetComponent<Inventario>();
 
-        speed   = 2f;
-        cansaco = 0f;
-        canMove = true;
-        canUseDoor = false;
-        panico  = 0f;
+        speed       = 2f;
+        cansaco     = 0f;
+        canMove     = true;
+        canUseDoor  = false;
+        panico      = 0f;
 
         //Vetores para guiarem o char para as diagonais (como na rosa dos ventos NO, NE, SO, SE)
         
@@ -83,6 +84,7 @@ public class CharMovement : MonoBehaviour {
 
         Corre();
 
+        
         //Sistema de Pânico
         if (emPanico)
         {
@@ -146,8 +148,10 @@ public class CharMovement : MonoBehaviour {
         if (col.gameObject.CompareTag("CameraArea"))
         {
             camArea = col.gameObject.GetComponent<CameraControl>();
+            camArea.GetTarget(this.transform);
             camArea.MoveCamera();
             camArea.Resize();
+            camArea.follow = true;
         }
     }
 
@@ -171,6 +175,11 @@ public class CharMovement : MonoBehaviour {
         if (col.gameObject.CompareTag("Door"))
         {
             canUseDoor = false;
+        }
+
+        if (col.gameObject.CompareTag("CameraArea"))
+        {
+            camArea.follow = false;
         }
     }
     #endregion
@@ -278,7 +287,7 @@ public class CharMovement : MonoBehaviour {
         bool joyCorrida = Input.GetKey("joystick button 2");
         
 
-        if ((botaoCorrida || joyCorrida) && moving && cansaco < 3f && cansado == false)    //Se o shift esquerdo está pressionado e o cansaço não está completo, então a velocidade aumenta para a corrida
+        if ((botaoCorrida || joyCorrida) && moving && cansaco < 3f && cansado == false) 
         {
             speed = 4f;
             anim.SetBool("running", true);
@@ -299,14 +308,13 @@ public class CharMovement : MonoBehaviour {
                 }
                 else
                 {
-                    if (cansaco >= 3f && cansado == false)      //Se o cansaço alcança o máximo, a velocidade também volta ao normal, não podendo correr
+                    if (cansaco >= 3f && cansado == false)  
                     {
                         speed = 2f;
                         cansado = true;
+                        anim.SetBool("running", false);
 
                         StartCoroutine(EsperaParaRespirar());
-
-                        anim.SetBool("running", false);
                     }
                     else
                     {
@@ -352,6 +360,5 @@ public class CharMovement : MonoBehaviour {
         yield return new WaitForSeconds(2);
         podeRespirar = true;
     }
-    
     #endregion
 }

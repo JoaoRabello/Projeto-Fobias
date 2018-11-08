@@ -10,6 +10,8 @@ public class DoorSystem : MonoBehaviour {
     public GameObject doorDestiny;
     Animator anim;
 
+    public Animator fadeAnim;
+
     private void Start()
     {
         anim = GetComponentInParent<Animator>();
@@ -32,6 +34,7 @@ public class DoorSystem : MonoBehaviour {
 
     public void DoorEnter(GameObject player)
     {
+        fadeAnim.SetTrigger("Fade");
         StartCoroutine(WaitToOpen(player));
     }
 
@@ -45,6 +48,8 @@ public class DoorSystem : MonoBehaviour {
         playerMove.speed = 2f;
         
         yield return new WaitForSecondsRealtime(0.5f);
+
+        fadeAnim.SetTrigger("Fade");
         player.transform.position = doorDestiny.transform.position;
         playerMove.setCanMove(true);
         playerMove.moving = true;
