@@ -14,9 +14,12 @@ public class CharMovement : MonoBehaviour {
     //Movimento
     Rigidbody2D     rgb;
     public  float   speed;
+    private bool    running;
+    public bool    podeCorrer = true;
     private float   cansaco;
-    public bool     cansado;
+    public  bool    cansado;
     private bool    podeRespirar;
+    private bool    podeRespirarUpdate;
 
     private bool    canMove;
     public bool     moving;
@@ -26,6 +29,9 @@ public class CharMovement : MonoBehaviour {
     Vector3         diagInfEsq;
     Vector3         diagInfDir;
     public Vector3  directionExport;
+
+    bool botaoCorrida;
+    bool joyCorrida;
 
     //Portas
     bool canUseDoor;
@@ -73,6 +79,7 @@ public class CharMovement : MonoBehaviour {
         diagInfEsq = new Vector3(-1f, -0.5f);
         diagInfDir = new Vector3(1f, -0.5f);
 
+
     }
 	
 	void Update () {
@@ -81,6 +88,22 @@ public class CharMovement : MonoBehaviour {
         bool xDownKey           = Input.GetKeyDown(KeyCode.X);
         bool joyInteractKey     = Input.GetKey("joystick button 1");
         bool joyInteractDownKey = Input.GetKeyDown("joystick button 1");
+        botaoCorrida = Input.GetKey(KeyCode.Z);
+        joyCorrida = Input.GetKey("joystick button 2");
+
+        if (Input.GetKeyUp(KeyCode.Z))
+        {
+            StopCoroutine(ParouDeCorrer());
+            StartCoroutine(ParouDeCorrer());
+        }
+        else
+        {
+            if (podeRespirarUpdate)
+            {
+                RecuperaFolego();
+            }
+        }
+
 
         Corre();
 
@@ -108,7 +131,9 @@ public class CharMovement : MonoBehaviour {
                 }
             }
             else
+            {
                 door.DoorEnter(gameObject);
+            }
         }
     }
 
@@ -205,7 +230,13 @@ public class CharMovement : MonoBehaviour {
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical   = Input.GetAxisRaw("Vertical");
-        
+
+        if (horizontal == 0 || vertical == 0)
+        {
+            moving = false;
+            running = false;
+        }
+
         if (vertical > 0)      
         {
             if (horizontal < 0)   
@@ -277,20 +308,30 @@ public class CharMovement : MonoBehaviour {
 
     private void RecuperaFolego()
     {
-        cansaco -= 1f * Time.deltaTime;
-        cansacoSlider.value = cansaco;
+        if (!running)
+        {
+            cansaco -= 1f * Time.deltaTime;
+            cansacoSlider.value = cansaco;
+            if (cansaco <= 0f)
+            {
+                podeRespirarUpdate = false;
+                podeCorrer = true;
+                StopAllCoroutines();
+            }
+        }
     }
 
     private void Corre()
     {
-        bool botaoCorrida = Input.GetKey(KeyCode.Z);
-        bool joyCorrida = Input.GetKey("joystick button 2");
+
         
 
-        if ((botaoCorrida || joyCorrida) && moving && cansaco < 3f && cansado == false) 
+        if ((botaoCorrida || joyCorrida) && moving && cansaco < 3f && cansado == false && podeCorrer) 
         {
+            StopAllCoroutines();
             speed = 4f;
             anim.SetBool("running", true);
+            running = true;
             Cansa();
         }
         else
@@ -298,6 +339,8 @@ public class CharMovement : MonoBehaviour {
             if (moving == false && (botaoCorrida || joyCorrida))
             {
                 anim.SetBool("running", false);
+                running = false;
+                podeCorrer = false;
             }
             else
             {
@@ -305,6 +348,8 @@ public class CharMovement : MonoBehaviour {
                 {
                     speed = 2f;
                     anim.SetBool("running", false);
+                    running = false;
+
                 }
                 else
                 {
@@ -313,6 +358,9 @@ public class CharMovement : MonoBehaviour {
                         speed = 2f;
                         cansado = true;
                         anim.SetBool("running", false);
+                        running = false;
+                        podeCorrer = false;
+
 
                         StartCoroutine(EsperaParaRespirar());
                     }
@@ -321,6 +369,8 @@ public class CharMovement : MonoBehaviour {
                         if (cansado && podeRespirar)
                         {
                             RecuperaFolego();
+                            podeCorrer = false;
+                            podeRespirarUpdate = false;
                             if (cansaco <= 0)
                             {
                                 cansado = false;
@@ -340,6 +390,10 @@ public class CharMovement : MonoBehaviour {
             cansaco += 1f * Time.deltaTime;
             cansacoSlider.value = cansaco;
         }
+        if (GetComponentInChildren<Push>() && cansaco >= 3f)
+        {
+            GetComponentInChildren<Push>().UnChild();
+        }
     }
 
     private void EntraEmPanico(float valorPanico)
@@ -357,8 +411,18 @@ public class CharMovement : MonoBehaviour {
     #region Coroutines
     IEnumerator EsperaParaRespirar()
     {
+        print("Espera para respirar");
+        StopCoroutine(ParouDeCorrer());
         yield return new WaitForSeconds(2);
         podeRespirar = true;
+        print("FIM Espera para respirar");
+    }
+
+    IEnumerator ParouDeCorrer()
+    {
+        yield return new WaitForSeconds(1);
+        podeRespirarUpdate = true;
+        podeCorrer = false;
     }
     #endregion
 }

@@ -34,11 +34,13 @@ public class Push : MonoBehaviour {
 
         if((horizontal != 0 || vertical != 0 ) && playerPushing)
         {
+            player.podeCorrer = false;
             player.Cansa();
             player.speed = pushSpeed;
             if (player.cansado == true)
             {
                 UnChild();
+                player.podeCorrer = true;
             }
         }
 	}
@@ -49,7 +51,7 @@ public class Push : MonoBehaviour {
         playerPushing = true;
     }
 
-    void UnChild()
+    public void UnChild()
     {
         player.speed = 2f;
         transform.SetParent(null);

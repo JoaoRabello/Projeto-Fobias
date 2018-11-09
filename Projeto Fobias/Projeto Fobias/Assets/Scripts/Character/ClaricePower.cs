@@ -32,7 +32,6 @@ public class ClaricePower : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("Clarice"))
         {
-            GetComponent<SpriteRenderer>().enabled = false;
             canUsePower = true;
         }
     }
@@ -41,7 +40,6 @@ public class ClaricePower : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("Clarice"))
         {
-            GetComponent<SpriteRenderer>().enabled = true;
             canUsePower = false;
         }
     }

@@ -6,12 +6,12 @@ using UnityEngine.Events;
 public class InventoryEvent : UnityEvent{
 }
 
-
 public class Inventario : MonoBehaviour
 {
     String[] invSpaces = new String[2];
 
     public InventoryEvent keyEvent;
+    public InventoryEvent key2Event;
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -31,8 +31,10 @@ public class Inventario : MonoBehaviour
                 case Tag.Tags.chave2:
                     if (!InventarioFull())
                     {
+                        print("Pega chave 2");
                         EncheInventário("Chave2");
                         Destroy(col.gameObject);
+                        key2Event.Invoke();
                     }
                     break;
             }

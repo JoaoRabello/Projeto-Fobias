@@ -8,6 +8,7 @@ public class DoorSystem : MonoBehaviour {
 
     public bool hasAnim;
     public GameObject doorDestiny;
+    public GameObject chave;
     Animator anim;
 
     public Animator fadeAnim;
@@ -29,6 +30,7 @@ public class DoorSystem : MonoBehaviour {
 
     public void Unlock()
     {
+        chave.SetActive(false);
         isLocked = false;
     }
 
@@ -43,6 +45,10 @@ public class DoorSystem : MonoBehaviour {
         if (hasAnim)
             anim.SetBool("Open", true);
         CharMovement playerMove = player.GetComponent<CharMovement>();
+        if (player.GetComponentInChildren<Push>())
+        {
+            player.GetComponentInChildren<Push>().UnChild();
+        }
         playerMove.setCanMove(false);
         playerMove.moving = false;
         playerMove.speed = 2f;
