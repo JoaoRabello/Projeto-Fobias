@@ -24,6 +24,7 @@ public class Inventario : MonoBehaviour
                     if (!InventarioFull())
                     {
                         EncheInventário("Chave1");
+                        col.GetComponent<DialogueTrigger>().TriggerDialogue();
                         Destroy(col.gameObject);
                         keyEvent.Invoke();
                     }
@@ -31,7 +32,6 @@ public class Inventario : MonoBehaviour
                 case Tag.Tags.chave2:
                     if (!InventarioFull())
                     {
-                        print("Pega chave 2");
                         EncheInventário("Chave2");
                         Destroy(col.gameObject);
                         key2Event.Invoke();

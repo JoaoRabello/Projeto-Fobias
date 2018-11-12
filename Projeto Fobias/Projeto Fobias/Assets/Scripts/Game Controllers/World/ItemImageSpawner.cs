@@ -11,18 +11,15 @@ public class ItemImageSpawner : MonoBehaviour {
     bool guardianSpawned;
 
     public Canvas canvasWithImage;
-
-    public LibraryGuardian guardian;
-    public Transform guardianPosition;
 	
 
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.C) && canImageSpawn && imageSpawned == false)
+        if (Input.GetKeyDown(KeyCode.X) && canImageSpawn && imageSpawned == false)
         {
             ItemShow("open");
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && imageSpawned)
+        if (Input.GetKeyDown(KeyCode.Space) && imageSpawned)
         {
             ItemShow("close");    
         }
@@ -41,12 +38,6 @@ public class ItemImageSpawner : MonoBehaviour {
                 Destroy(GameObject.FindGameObjectWithTag("Item Image"));
                 imageSpawned = false;
                 Time.timeScale = 1;
-                if (guardianSpawned == false)
-                {
-                    guardian = Instantiate(guardian, guardianPosition);
-                    guardianSpawned = true;
-                    guardian.OnNotify();
-                }
                 break;
         }
     }

@@ -6,9 +6,14 @@ public class CharChanger : MonoBehaviour {
 
     #region Variaveis
     bool canChange;
+    bool firstChange = true;
     public int charNumber;
     int lastCharNumber;
     int tempCharNumber;
+
+    public GameObject cutscene2;
+    public GameObject hud;
+    public Animator fadeAnim;
 
     public Transform charPoolPosition;
 
@@ -42,8 +47,19 @@ public class CharChanger : MonoBehaviour {
     }
 
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.C) && canChange) ChangeChar(charNumber);
-        if (Input.GetKeyDown(KeyCode.KeypadEnter)) Application.Quit();
+        if (Input.GetKeyDown(KeyCode.X) && canChange && firstChange)
+        {
+            fadeAnim.SetTrigger("Fade");
+            StartCoroutine(Cutscene());
+            firstChange = false;
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.X) && canChange)
+            {
+                ChangeChar(charNumber);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -143,4 +159,18 @@ public class CharChanger : MonoBehaviour {
         lastCharNumber = tempCharNumber;
     }
     #endregion
+
+    IEnumerator Cutscene()
+    {
+        hud.SetActive(false);
+        yield return new WaitForSecondsRealtime(0.5f);
+        cutscene2.SetActive(true);
+        yield return new WaitForSecondsRealtime(0.5f);
+        fadeAnim.SetTrigger("Fade");
+        ChangeChar(charNumber);
+        yield return new WaitForSecondsRealtime(11f);
+        cutscene2.SetActive(false);
+        yield return new WaitForSecondsRealtime(0.2f);
+        hud.SetActive(true);
+    }
 }
