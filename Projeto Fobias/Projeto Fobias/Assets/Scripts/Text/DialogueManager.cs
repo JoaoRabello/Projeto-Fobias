@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour {
     public Animator arielImage;
     public Animator clariceImage;
 
+    CharMovement player;
+
     private void Start()
     {
         gc = FindObjectOfType<GameController>();
@@ -23,6 +25,9 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue(Dialogue dialogue)
     {
+        player = gc.GetActiveCharGO();
+        player.SetIsDialoguing(true);
+
         Time.timeScale = 0;
 
         dialogueEnded = false;
@@ -45,7 +50,6 @@ public class DialogueManager : MonoBehaviour {
     {
         if(argumentos.Count == 0)
         {
-            Debug.Log(argumentos.Count);
             EndDialogue();
             return;
         }
@@ -57,6 +61,7 @@ public class DialogueManager : MonoBehaviour {
 
     void EndDialogue()
     {
+        player.SetIsDialoguing(false);
         Time.timeScale = 1;
         AnimateBox(0);
         dialogueEnded = true;

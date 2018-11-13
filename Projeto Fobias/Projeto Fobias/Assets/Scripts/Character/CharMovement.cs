@@ -1,6 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class LockedSoundEvents : UnityEvent
+{
+}
+
 
 public class CharMovement : MonoBehaviour {
 
@@ -49,6 +56,7 @@ public class CharMovement : MonoBehaviour {
     DialogueTrigger readTrigger;
 
     public bool canDialogue;
+    public bool isDialoguing;
 
     //Animação
     Animator anim;
@@ -56,6 +64,8 @@ public class CharMovement : MonoBehaviour {
     //UI
     public Slider cansacoSlider;
     public Slider panicoSlider;
+
+    [SerializeField] LockedSoundEvents somEvento;
     #endregion
 
     #region Main
@@ -114,7 +124,7 @@ public class CharMovement : MonoBehaviour {
             EntraEmPanico(0.005f);
         }
 
-        if ((xKey || joyInteractKey) && canDialogue)
+        if ((xDownKey || joyInteractKey) && canDialogue && isDialoguing == false)
         {
             readTrigger.TriggerDialogue();
         }
@@ -123,6 +133,7 @@ public class CharMovement : MonoBehaviour {
         {
             if (door.GetIsLocked())
             {
+                somEvento.Invoke();
                 string key = door.GetKeyName();
                 if (inventario.GetItemInventário(key))
                 {
@@ -405,6 +416,11 @@ public class CharMovement : MonoBehaviour {
     public Vector3 GetDirection()
     {
         return directionExport;
+    }
+
+    public void SetIsDialoguing(bool value)
+    {
+        isDialoguing = value;
     }
     #endregion
 

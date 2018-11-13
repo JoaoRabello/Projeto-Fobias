@@ -8,6 +8,9 @@ public class GameController : MonoBehaviour {
     public GameObject pauseTextInstance;
     bool onPause;
 
+    public CharMovement arielGO;
+    public CharMovement clariceGO;
+
     int activeChar = 0;
 
     private void Awake()
@@ -39,6 +42,22 @@ public class GameController : MonoBehaviour {
     public int GetActiveChar()
     {
         return activeChar;
+    }
+
+    public CharMovement GetActiveCharGO()
+    {
+        if(GetActiveChar() == 0)
+        {
+            return arielGO;
+        }
+        else
+        {
+            if(GetActiveChar() == 2)
+            {
+                return clariceGO;
+            }
+        }
+        return arielGO;
     }
 
     public void SetActiveChar(int activeChar)

@@ -10,7 +10,7 @@ public class OnTouchEvent : UnityEvent
 
 public class TouchEvents : MonoBehaviour {
 
-    public enum Event { enemy, cutscene, text, evento};
+    public enum Event { enemy, cutscene, text, evento, multiplosEventos};
     public Event eventTag;
 
     public GameObject enemyPool;
@@ -18,7 +18,15 @@ public class TouchEvents : MonoBehaviour {
     
     private CharMovement player;
 
+    public bool startRandomize;
+    private float timeToPlay;
+
     [SerializeField] private OnTouchEvent myEvent;
+    [SerializeField] private OnTouchEvent randomEvent1;
+    [SerializeField] private OnTouchEvent randomEvent2;
+    [SerializeField] private OnTouchEvent randomEvent3;
+    [SerializeField] private OnTouchEvent randomEvent4;
+   
 
     private void Start()
     {
@@ -57,7 +65,51 @@ public class TouchEvents : MonoBehaviour {
             case Event.evento:
                 myEvent.Invoke();
                 break;
+            case Event.multiplosEventos:
+                startRandomize = true;
+                break;
         }
+    }
+
+    private void Update()
+    {
+        if (startRandomize)
+        {
+            RandomizeSounds();
+        }
+    }
+
+    void RandomizeSounds()
+    {
+        if(timeToPlay >= 0)
+        {
+            timeToPlay -= Time.deltaTime;
+        }
+        else
+        {
+            timeToPlay = Random.Range(5f, 10f);
+            int randomOp = Random.Range(1, 4);
+            switch (randomOp)
+            {
+                case 1:
+                    randomEvent1.Invoke();
+                    break;
+                case 2:
+                    randomEvent2.Invoke();
+                    break;
+                case 3:
+                    randomEvent3.Invoke();
+                    break;
+                case 4:
+                    randomEvent4.Invoke();
+                    break;
+            }
+        }
+    }
+
+    public void SetRandomize(bool value)
+    {
+        startRandomize = value;
     }
 
     void Enemies()

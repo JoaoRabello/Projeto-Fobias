@@ -14,6 +14,7 @@ public class CharChanger : MonoBehaviour {
     public GameObject cutscene2;
     public GameObject hud;
     public Animator fadeAnim;
+    private AudioSource[] allAudioSources;
 
     public Transform charPoolPosition;
 
@@ -30,6 +31,9 @@ public class CharChanger : MonoBehaviour {
     private void Awake()
     {
         gameController = FindObjectOfType<GameController>();
+
+        allAudioSources = FindObjectsOfType<AudioSource>() as AudioSource[];
+
 
         ariel = GameObject.FindGameObjectWithTag("Ariel");
         clarice = GameObject.FindGameObjectWithTag("Clarice");
@@ -61,6 +65,7 @@ public class CharChanger : MonoBehaviour {
             }
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -158,19 +163,37 @@ public class CharChanger : MonoBehaviour {
         charNumber = lastCharNumber;
         lastCharNumber = tempCharNumber;
     }
+
+    void PauseAllAudio()
+    {
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.Pause();
+        }
+    }
+
+    void UnpauseAllAudio()
+    {
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.UnPause();
+        }
+    }
     #endregion
 
     IEnumerator Cutscene()
     {
         hud.SetActive(false);
+        PauseAllAudio();
         yield return new WaitForSecondsRealtime(0.5f);
         cutscene2.SetActive(true);
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(1f);
         fadeAnim.SetTrigger("Fade");
         ChangeChar(charNumber);
-        yield return new WaitForSecondsRealtime(11f);
+        yield return new WaitForSecondsRealtime(14f);
         cutscene2.SetActive(false);
         yield return new WaitForSecondsRealtime(0.2f);
         hud.SetActive(true);
+        UnpauseAllAudio();
     }
 }
