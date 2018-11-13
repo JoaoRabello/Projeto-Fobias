@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
     public GameObject pauseTextInstance;
     bool onPause;
+
+    private AudioSource[] allAudioSources;
 
     public CharMovement arielGO;
     public CharMovement clariceGO;
@@ -15,8 +17,12 @@ public class GameController : MonoBehaviour {
 
     private void Awake()
     {
-        pauseTextInstance = GameObject.FindGameObjectWithTag("PauseWindow");
         pauseTextInstance.SetActive(false);
+    }
+
+    private void Start()
+    {
+        allAudioSources = FindObjectsOfType<AudioSource>() as AudioSource[];
     }
 
     void Update () {
@@ -82,5 +88,34 @@ public class GameController : MonoBehaviour {
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void EndGame()
+    {
+        StartCoroutine(WaitForCredits());
+        
+    }
+
+    public void PauseAllAudio()
+    {
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.Pause();
+        }
+    }
+
+    void UnpauseAllAudio()
+    {
+        foreach (AudioSource audioS in allAudioSources)
+        {
+            audioS.UnPause();
+        }
+    }
+
+
+    IEnumerator WaitForCredits()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+        SceneManager.LoadScene(2);
     }
 }

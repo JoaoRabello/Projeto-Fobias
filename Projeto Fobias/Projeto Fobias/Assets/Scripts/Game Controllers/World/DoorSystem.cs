@@ -34,6 +34,11 @@ public class DoorSystem : MonoBehaviour {
         isLocked = false;
     }
 
+    public void SetLock(bool value)
+    {
+        isLocked = value;
+    }
+
     public void DoorEnter(GameObject player)
     {
         fadeAnim.SetTrigger("Fade");

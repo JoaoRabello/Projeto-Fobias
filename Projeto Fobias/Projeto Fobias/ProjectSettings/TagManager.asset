@@ -10,12 +10,12 @@ TagManager:
   - Pamela
   - Item
   - Item Image
-  - Guardian
   - PauseWindow
   - Legivel
   - LegivelClarice
   - Door
   - CameraArea
+  - Enemy
   layers:
   - Default
   - TransparentFX

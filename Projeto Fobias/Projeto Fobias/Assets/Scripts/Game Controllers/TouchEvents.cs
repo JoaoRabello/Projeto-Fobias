@@ -115,6 +115,7 @@ public class TouchEvents : MonoBehaviour {
     void Enemies()
     {
         Instantiate(enemyPool,transform);
+        Destroy(this);
     }
 
     void Cutscenes()

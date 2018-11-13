@@ -158,7 +158,7 @@ public class CharMovement : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Item"))      if(col.gameObject.GetComponent<ItemImageSpawner>() == true) col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;
-        if (col.gameObject.CompareTag("Guardian"))  emPanico = true;
+        if (col.gameObject.CompareTag("Enemy"))  emPanico = true;
 
 
         //ALTERAR TODA ESSA BAGUNÇA
@@ -194,7 +194,7 @@ public class CharMovement : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Item")) if (col.gameObject.GetComponent<ItemImageSpawner>() == true) col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = false;
-        if (col.gameObject.CompareTag("Guardian")) emPanico = false;
+        if (col.gameObject.CompareTag("Enemy")) emPanico = false;
 
         //ALTERAR TODA ESSA BAGUNÇA
         if (col.gameObject.CompareTag("Legivel") && gc.GetActiveChar() == 0)
