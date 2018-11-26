@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour {
     public CharMovement arielGO;
     public CharMovement clariceGO;
 
-    int activeChar = 0;
+    [SerializeField] int activeChar = 0;
 
     private void Awake()
     {

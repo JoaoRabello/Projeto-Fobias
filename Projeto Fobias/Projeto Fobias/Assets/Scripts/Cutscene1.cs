@@ -23,7 +23,7 @@ public class Cutscene1 : MonoBehaviour {
     IEnumerator Cutscene()
     {
         hud.SetActive(false);
-        yield return new WaitForSecondsRealtime(10f);
+        yield return new WaitForSecondsRealtime(11f);
         hud.SetActive(true);
         evento.Invoke();
     }

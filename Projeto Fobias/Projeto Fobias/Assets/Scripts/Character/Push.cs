@@ -49,6 +49,7 @@ public class Push : MonoBehaviour {
     {
         transform.SetParent(playerT);
         playerPushing = true;
+        player.GetComponent<Animator>().SetBool("pushing", true);
     }
 
     public void UnChild()
@@ -56,6 +57,8 @@ public class Push : MonoBehaviour {
         player.speed = 2f;
         transform.SetParent(null);
         playerPushing = false;
+        player.GetComponent<Animator>().SetBool("pushing", false);
+
     }
 
     private void OnCollisionEnter2D(Collision2D col)

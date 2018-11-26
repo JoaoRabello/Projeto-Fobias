@@ -41,6 +41,7 @@ public class Fish : MonoBehaviour {
         {
             playerOnSight = true;
             anim.SetBool("Spawn", true);
+            StartCoroutine(MoveAnim());
             player = col.gameObject.GetComponent<CharMovement>();
         }
     }
@@ -49,14 +50,22 @@ public class Fish : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("Ariel") || col.gameObject.CompareTag("Clarice"))
         {
-            playerOnSight = false;
-            anim.SetBool("Spawn", false);
+            
             StartCoroutine(SetInactive());
         }
     }
 
+    IEnumerator MoveAnim()
+    {
+        yield return new WaitForSecondsRealtime(0.8f);
+        anim.SetBool("Move", true);
+    }
+
     IEnumerator SetInactive()
     {
+        yield return new WaitForSecondsRealtime(1.5f);
+        playerOnSight = false;
+        anim.SetBool("Spawn", false);
         yield return new WaitForSecondsRealtime(1f);
         gameObject.SetActive(false);
     }
