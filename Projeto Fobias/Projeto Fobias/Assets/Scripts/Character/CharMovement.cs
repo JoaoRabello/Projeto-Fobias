@@ -88,8 +88,6 @@ public class CharMovement : MonoBehaviour {
         diagSupDir = new Vector3(1f, 0.5f);
         diagInfEsq = new Vector3(-1f, -0.5f);
         diagInfDir = new Vector3(1f, -0.5f);
-
-
     }
 	
 	void Update () {
