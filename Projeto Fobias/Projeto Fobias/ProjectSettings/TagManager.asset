@@ -16,6 +16,7 @@ TagManager:
   - Door
   - CameraArea
   - Enemy
+  - Agua
   layers:
   - Default
   - TransparentFX

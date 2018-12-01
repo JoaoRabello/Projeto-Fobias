@@ -8,7 +8,6 @@ public class LockedSoundEvents : UnityEvent
 {
 }
 
-
 public class CharMovement : MonoBehaviour {
 
 
@@ -21,8 +20,9 @@ public class CharMovement : MonoBehaviour {
     //Movimento
     Rigidbody2D     rgb;
     public  float   speed;
-    private bool    running;
-    public bool    podeCorrer = true;
+    public  float   runSpeed;
+    public bool     running;
+    public bool     podeCorrer = true;
     private float   cansaco;
     public  bool    cansado;
     private bool    podeRespirar;
@@ -77,6 +77,7 @@ public class CharMovement : MonoBehaviour {
         inventario = GetComponent<Inventario>();
 
         speed       = 2f;
+        runSpeed    = 4f;
         cansaco     = 0f;
         canMove     = true;
         canUseDoor  = false;
@@ -153,6 +154,9 @@ public class CharMovement : MonoBehaviour {
   
     }
 
+    #endregion
+
+    #region Triggers
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Item"))      if(col.gameObject.GetComponent<ItemImageSpawner>() == true) col.gameObject.GetComponent<ItemImageSpawner>().canImageSpawn = true;
@@ -177,6 +181,12 @@ public class CharMovement : MonoBehaviour {
         {
             door = col.gameObject.GetComponent<DoorSystem>();
             canUseDoor = true;
+        }
+
+        if (col.gameObject.CompareTag("Agua"))
+        {
+            speed = 1.5f;
+            runSpeed = 3f;
         }
 
         if (col.gameObject.CompareTag("CameraArea"))
@@ -211,9 +221,24 @@ public class CharMovement : MonoBehaviour {
             canUseDoor = false;
         }
 
+        if (col.gameObject.CompareTag("Agua"))
+        {
+            speed = 2f;
+            runSpeed = 4f;
+        }
+
         if (col.gameObject.CompareTag("CameraArea"))
         {
             camArea.follow = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Agua"))
+        {
+            speed = 1.5f;
+            runSpeed = 3f;
         }
     }
     #endregion
@@ -338,7 +363,7 @@ public class CharMovement : MonoBehaviour {
         if ((botaoCorrida || joyCorrida) && moving && cansaco < 3f && cansado == false && podeCorrer) 
         {
             StopAllCoroutines();
-            speed = 4f;
+            speed = runSpeed;
             anim.SetBool("running", true);
             running = true;
             Cansa();
