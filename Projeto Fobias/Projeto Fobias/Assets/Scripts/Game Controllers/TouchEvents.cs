@@ -15,8 +15,6 @@ public class TouchEvents : MonoBehaviour {
 
     public GameObject enemyPool;
     private DialogueTrigger dlgTrigger;
-    
-    private CharMovement player;
 
     public bool startRandomize;
     private float timeToPlay;
@@ -44,7 +42,6 @@ public class TouchEvents : MonoBehaviour {
     {
         if(col.gameObject.CompareTag("Clarice") || col.gameObject.CompareTag("Ariel"))
         {
-            player = col.GetComponent<CharMovement>();
             PlayEvent();
         }
     }
