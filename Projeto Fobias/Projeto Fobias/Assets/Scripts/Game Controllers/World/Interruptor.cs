@@ -43,6 +43,12 @@ public class Interruptor : MonoBehaviour {
         }
 	}
 
+    public bool GetAcesa()
+    {
+        return acesa;
+    }
+
+
     private void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.CompareTag("Ariel") || col.gameObject.CompareTag("Clarice"))
@@ -50,4 +56,14 @@ public class Interruptor : MonoBehaviour {
             playerOnRange = true;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Ariel") || col.gameObject.CompareTag("Clarice"))
+        {
+            playerOnRange = false;
+        }
+    }
+
+    
 }
