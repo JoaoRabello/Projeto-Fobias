@@ -11,6 +11,8 @@ public class CharChanger : MonoBehaviour {
     int lastCharNumber;
     int tempCharNumber;
 
+    private SpriteRenderer sprRender;
+    [SerializeField] private Sprite blackAndWhite;
     public GameObject cutscene2;
     public GameObject hud;
     public Animator fadeAnim;
@@ -34,6 +36,7 @@ public class CharChanger : MonoBehaviour {
 
         allAudioSources = FindObjectsOfType<AudioSource>() as AudioSource[];
 
+        sprRender = GetComponent<SpriteRenderer>();
 
         ariel = GameObject.FindGameObjectWithTag("Ariel");
         clarice = GameObject.FindGameObjectWithTag("Clarice");
@@ -57,13 +60,13 @@ public class CharChanger : MonoBehaviour {
             StartCoroutine(Cutscene());
             firstChange = false;
         }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.X) && canChange)
-            {
-                ChangeChar(charNumber);
-            }
-        }
+        //else
+        //{
+        //    //if (Input.GetKeyDown(KeyCode.X) && canChange)
+        //    //{
+        //    //    ChangeChar(charNumber);
+        //    //}
+        //}
     }
 
 
@@ -191,6 +194,7 @@ public class CharChanger : MonoBehaviour {
         fadeAnim.SetTrigger("Fade");
         ChangeChar(charNumber);
         yield return new WaitForSecondsRealtime(14f);
+        sprRender.sprite = blackAndWhite;
         cutscene2.SetActive(false);
         yield return new WaitForSecondsRealtime(0.2f);
         hud.SetActive(true);

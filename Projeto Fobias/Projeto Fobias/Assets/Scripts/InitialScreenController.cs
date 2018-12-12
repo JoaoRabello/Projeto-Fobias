@@ -6,7 +6,7 @@ public class InitialScreenController : MonoBehaviour {
 
 	public void Play()
     {
-        sLoader.LoadLevel(1);
+        sLoader.LoadLevel(2);
     }
 
     public void Options()

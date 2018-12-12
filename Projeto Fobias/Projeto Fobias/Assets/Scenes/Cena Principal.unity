@@ -1056,6 +1056,10 @@ MonoBehaviour:
     argumentos:
     - "\rMeus pais me deram isso quando eu ainda era pequena. Por muito tempo me ajudou
       quando eu acordava assustada..\r"
+  english_Dialogue:
+    argumentos:
+    - My parents gave me this when I was little. It helped me for a long time, when  I
+      used to be frightened by my nightmares.
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -1398,6 +1402,8 @@ MonoBehaviour:
     - 'De Aristoteles e Homero ate Salinger, Orwell, Poe... '
     - Tantos estilos. Tao pouco tempo.
     - Infelizmente, nada sobre astronomia aqui.
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -2876,6 +2882,8 @@ MonoBehaviour:
     - "Zel s\xF3 pode estar de sacanagem comigo. N\xE3o \xE9 poss\xEDvel. Ele sabe
       que eu odeio esse tipo de coisa..."
     - "Ele sabe\u2026"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -3896,7 +3904,7 @@ GameObject:
   - component: {fileID: 230019959}
   - component: {fileID: 230019960}
   m_Layer: 0
-  m_Name: camaesquerda
+  m_Name: Cama
   m_TagString: Legivel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4004,6 +4012,10 @@ MonoBehaviour:
     argumentos:
     - "Eu adorava pegar no sono enquanto olhava para as estrelas. Mesmo antes de ter
       o telesc\xF3pio."
+  english_Dialogue:
+    argumentos:
+    - I just loved to fall asleep while looking at the stars. Even before getting
+      my telescope.
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -5659,6 +5671,10 @@ MonoBehaviour:
     argumentos:
     - "Ok, uma chave. Que conveniente. T\xF4 come\xE7ando a me sentir como se estivesse
       dentro de um jogo ou uma s\xE9rie. Fala s\xE9rio."
+  english_Dialogue:
+    argumentos:
+    - "Nice, a key. How convenient. I\u2019m starting to feel like I\u2019m part of
+      a movie or a game or anything like that. How serious this can be?"
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -7781,6 +7797,9 @@ MonoBehaviour:
   dialogue:
     argumentos:
     - "*knock knock* Al\xF4, senhor bicho-pap\xE3o? hihi"
+  english_Dialogue:
+    argumentos:
+    - '*knock knock* Hello! Are you there, Mr. Boogeyman?'
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -8577,6 +8596,8 @@ MonoBehaviour:
     - "Zel s\xF3 pode estar de sacanagem comigo. N\xE3o \xE9 poss\xEDvel. Ele sabe
       que eu odeio esse tipo de coisa..."
     - "Ele sabe\u2026"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -9771,6 +9792,8 @@ MonoBehaviour:
     - "Zel s\xF3 pode estar de sacanagem comigo. N\xE3o \xE9 poss\xEDvel. Ele sabe
       que eu odeio esse tipo de coisa..."
     - "Ele sabe\u2026"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -9981,6 +10004,17 @@ MonoBehaviour:
     - "Eu \xE9 que n\xE3o fico perto dessa coisa..."
     - "Se houvesse alguma forma de afast\xE1-la\u2026 Bem, elas s\xE3o atra\xEDdas
       por luz. Quem sabe?"
+  english_Dialogue:
+    argumentos:
+    - "An <i>Ascalapha odorata</i>. Grandma used to call it \u201Cthe black witch\u201D."
+    - "I love science, really, but these bugs\u2026"
+    - "They\u2019re pretty cute. But only in photos. Personally, I\u2019d prefer to
+      stay away from these\u2026 urgh, it gives me chills, I can\u2019t event talk
+      about it."
+    - "And also, grandma used to say they are omens of doom. I\u2019m not getting
+      any closer."
+    - "Maybe if I could attract its attention\u2026 They are usually attracted by
+      light. Who knows?"
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -11736,7 +11770,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2129166901}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &792768029
 GameObject:
@@ -11929,6 +11963,10 @@ MonoBehaviour:
     argumentos:
     - "Que estranho\u2026 A porta est\xE1 fechada. Bem, n\xE3o \xE9 como se tivesse
       algo de importante mesmo.\r"
+  english_Dialogue:
+    argumentos:
+    - "Weird\u2026 The door\u2019s closed. Well, it\u2019s not like I\u2019d find
+      anything interesting inside this wardrobe."
   hasSound: 1
   som:
     m_PersistentCalls:
@@ -12449,6 +12487,16 @@ MonoBehaviour:
       Vivendo e aprendendo, Ariel\u2026 Vivendo e aprendendo. Eu deveria tirar uma\u2026\r"
     - "U\xE9, cad\xEA meu celular? Que saco\u2026 Melhor eu descobrir onde deixei.
       E procurar o Zel. Ele deve estar por tr\xE1s disso.\r"
+  english_Dialogue:
+    argumentos:
+    - "All this time I\u2019ve been studying and I\u2019ve never seen any book or
+      author talking about a phenomenom in which the sky gets pitch black and weird
+      like that."
+    - "It\u2019s\u2026 creepy. Fascinating, somehow, but very creepy."
+    - And I was thinking that I had seen some weird things at the college or at work.
+      Well, I guess you live and learn. I definitely should take a...
+    - "Hey, where\u2019s my phone? Really? Jesus\u2026 I better find out where I left
+      it. And look for Zeke. He must have something to do with this."
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -13762,6 +13810,9 @@ MonoBehaviour:
   dialogue:
     argumentos:
     - "SR. GEL\xC9IA! Eu nunca pensei que te veria de novo."
+  english_Dialogue:
+    argumentos:
+    - "MR. JELLY! I thought I\u2019d never see you again."
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -13959,6 +14010,8 @@ MonoBehaviour:
   dialogue:
     argumentos:
     - "Voc\xEA \xE9 muito linda!"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -14557,6 +14610,9 @@ MonoBehaviour:
   dialogue:
     argumentos:
     - "N\xE3o d\xE1 pra ver estrela nisso aqui. Mas que meleca."
+  english_Dialogue:
+    argumentos:
+    - "I can\u2019t see any stars in this thing. What a crap."
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -15040,6 +15096,14 @@ MonoBehaviour:
     - "Zel s\xF3 pode estar de sacanagem comigo. N\xE3o \xE9 poss\xEDvel. Ele sabe
       que eu odeio esse tipo de coisa..."
     - "Ele sabe\u2026"
+  english_Dialogue:
+    argumentos:
+    - "Okay, I\u2019m getting scared."
+    - "This corridor\u2026 It\u2019s huge."
+    - "Dad\u2019s house isn\u2019t that big."
+    - "Zeke must be fucking with me, it\u2019s the only explanation. He knows how
+      much I hate these stupid jokes\u2026"
+    - He knows...
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -16281,6 +16345,12 @@ MonoBehaviour:
       que ele gosta."
     - "Daqui eu posso ver que h\xE1 outro no andar de cima, mas\u2026 Sem chance."
     - "Por menor que eu seja, n\xE3o consigo entrar a\xED.\r"
+  english_Dialogue:
+    argumentos:
+    - "No doubt it would be part of Zeke\u2019s plan for me to climb the air duct,
+      justlike those old movies he loves."
+    - "I can see another duct on the floor above, but\u2026 No way."
+    - "I don\u2019t even fit in this space."
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -16815,6 +16885,8 @@ MonoBehaviour:
     - "Zel s\xF3 pode estar de sacanagem comigo. N\xE3o \xE9 poss\xEDvel. Ele sabe
       que eu odeio esse tipo de coisa..."
     - "Ele sabe\u2026"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -17375,6 +17447,8 @@ MonoBehaviour:
   dialogue:
     argumentos:
     - "Voc\xEA \xE9 muito linda!"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -19588,6 +19662,8 @@ MonoBehaviour:
     - "Isso e tao \u2018Duro de Matar\u2019. Pena que a vida nao e como nos filmes."
     - Eu nao consigo entrar nisso aqui.
     - Nao que eu seja grande, ne? Mas tambem nao e como se eu fosse uma crianca.
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -20490,6 +20566,11 @@ MonoBehaviour:
     - "T\xE1, sem chances de ir l\xE1 em cima, pelo visto. Essa casa \xE9 estranha
       e bem antiga. Seja l\xE1 o que for que Zel tenha planejado, deve ter dado trabalho.
       De qualquer modo, eu n\xE3o vou arriscar subir nisso.\r"
+  english_Dialogue:
+    argumentos:
+    - "No way I\u2019m getting up there. This is an old and fucked up house. Whatever
+      Zeke has planned, he spended a lot of time working on it. Anyway, I\u2019m not
+      walking up these stairs."
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -21296,6 +21377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charNumber: 2
+  blackAndWhite: {fileID: 21300008, guid: 735343ff0fac1b24ea5b54e51773868f, type: 3}
   cutscene2: {fileID: 743235004}
   hud: {fileID: 1062447786}
   fadeAnim: {fileID: 1109622524}
@@ -21839,6 +21921,8 @@ MonoBehaviour:
     - "Zel s\xF3 pode estar de sacanagem comigo. N\xE3o \xE9 poss\xEDvel. Ele sabe
       que eu odeio esse tipo de coisa..."
     - "Ele sabe\u2026"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -22913,6 +22997,8 @@ MonoBehaviour:
     - "Zel s\xF3 pode estar de sacanagem comigo. N\xE3o \xE9 poss\xEDvel. Ele sabe
       que eu odeio esse tipo de coisa..."
     - "Ele sabe\u2026"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -22987,6 +23073,133 @@ Transform:
   m_Father: {fileID: 960368769}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1512494976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512494977}
+  - component: {fileID: 1512494980}
+  - component: {fileID: 1512494979}
+  - component: {fileID: 1512494978}
+  m_Layer: 0
+  m_Name: "Sala de Quadros Di\xE1logo"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1512494977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512494976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 64.55, y: -1.46, z: 0.034339644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2129166901}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1512494978
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512494976}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.10593796, y: 1.1095161}
+      - {x: -3.4456406, y: -0.76529765}
+      - {x: -2.2451553, y: -1.4183009}
+      - {x: -1.9626083, y: -1.3212278}
+      - {x: -1.225441, y: -0.92199993}
+      - {x: 0.8131943, y: -0.6383872}
+      - {x: 1.1093369, y: -2.3906312}
+      - {x: 0.6963272, y: -3.0099072}
+      - {x: 1.8837051, y: -3.577506}
+      - {x: 3.5271683, y: -0.86591196}
+--- !u!114 &1512494979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512494976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0260d6cd530f645a46e932df7cf2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    argumentos:
+    - "Uau! Que lugar incr\xEDvel."
+    - Tantos quadros lindos, tantos estilos.
+    - "Ainda assim\u2026 Tem algo de estranho aqui. Como se a atmosfera fosse\u2026"
+    - <i>Diferente.</i>
+  english_Dialogue:
+    argumentos:
+    - Wow! What an amazing place.
+    - So many different paintings and different styles..
+    - "However\u2026 It feels odd. The atmosphere is so..."
+    - <i>different...</i>
+  hasSound: 0
+  som:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: SoundEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &1512494980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512494976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c8681ac1d3136e42825da5e80d66f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventTag: 2
+  enemyPool: {fileID: 1490085158479928, guid: 39793353ea26cb64483b06e1edc18fb7, type: 2}
+  startRandomize: 0
+  myEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OnTouchEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  randomEvent1:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OnTouchEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  randomEvent2:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OnTouchEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  randomEvent3:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OnTouchEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  randomEvent4:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: OnTouchEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1521646400
 GameObject:
   m_ObjectHideFlags: 0
@@ -26114,6 +26327,8 @@ MonoBehaviour:
     - "Zel s\xF3 pode estar de sacanagem comigo. N\xE3o \xE9 poss\xEDvel. Ele sabe
       que eu odeio esse tipo de coisa..."
     - "Ele sabe\u2026"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -26936,7 +27151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -25.1, y: -86.9}
+  m_AnchoredPosition: {x: -25.1, y: -86.8999}
   m_SizeDelta: {x: 1548, y: 151.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828388368
@@ -27368,6 +27583,9 @@ MonoBehaviour:
   dialogue:
     argumentos:
     - "\xC9 grande, mas acho que consigo puxar."
+  english_Dialogue:
+    argumentos:
+    - "It\u2019s damn heavy, but I think I can pull it.."
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -28051,6 +28269,8 @@ MonoBehaviour:
     - "Por que ele me faz lembrar da mam\xE3e?"
     - "Por favor, eu quero sair daqui.\r"
     - "Eu quero\u2026"
+  english_Dialogue:
+    argumentos: []
   hasSound: 1
   som:
     m_PersistentCalls:
@@ -28616,7 +28836,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -106.900024, y: -57.2}
+  m_AnchoredPosition: {x: -106.8999, y: -57.19995}
   m_SizeDelta: {x: 172.80005, y: 50.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1921147996
@@ -29187,6 +29407,8 @@ MonoBehaviour:
     - "Zel s\xF3 pode estar de sacanagem comigo. N\xE3o \xE9 poss\xEDvel. Ele sabe
       que eu odeio esse tipo de coisa..."
     - "Ele sabe\u2026"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -29810,7 +30032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 62, y: -62.9}
+  m_AnchoredPosition: {x: 62, y: -62.899902}
   m_SizeDelta: {x: 64.400024, y: 64.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2093308471
@@ -30062,6 +30284,8 @@ MonoBehaviour:
   dialogue:
     argumentos:
     - "Voc\xEA \xE9 muito linda!"
+  english_Dialogue:
+    argumentos: []
   hasSound: 0
   som:
     m_PersistentCalls:
@@ -30257,6 +30481,7 @@ Transform:
   - {fileID: 673075275}
   - {fileID: 1846846144}
   - {fileID: 1353510810}
+  - {fileID: 1512494977}
   - {fileID: 790604803}
   m_Father: {fileID: 0}
   m_RootOrder: 7
