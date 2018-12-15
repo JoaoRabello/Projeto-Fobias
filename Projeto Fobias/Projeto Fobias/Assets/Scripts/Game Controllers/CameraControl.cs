@@ -4,6 +4,7 @@ public class CameraControl : MonoBehaviour {
 
     public Transform cameraPositionDestiny;
     public Transform target;
+    GameObject cameraParent;
     Camera cam;
     public float size;
 
@@ -13,6 +14,7 @@ public class CameraControl : MonoBehaviour {
 
     private void Awake()
     {
+        cameraParent = GameObject.FindGameObjectWithTag("Camera Parent");
         cam = FindObjectOfType<Camera>();
     }
 
@@ -21,8 +23,8 @@ public class CameraControl : MonoBehaviour {
         if (follow && isFollowArea)
         {
             Vector3 destinyPosition = target.position + offset;
-            Vector3 smoothedPosition = Vector3.Lerp(cam.transform.position, destinyPosition, smoothSpeed * Time.deltaTime);
-            cam.transform.position = smoothedPosition;
+            Vector3 smoothedPosition = Vector3.Lerp(cameraParent.transform.position, destinyPosition, smoothSpeed * Time.deltaTime);
+            cameraParent.transform.position = smoothedPosition;
         }
     }
 
@@ -39,8 +41,8 @@ public class CameraControl : MonoBehaviour {
     public void MoveCamera()
     {
         if (isFollowArea)
-            cam.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -10f);
+            cameraParent.transform.position = new Vector3(target.transform.position.x, target.transform.position.y, -10f);
         else
-            cam.transform.position = new Vector3(transform.position.x,transform.position.y, -10f);
+            cameraParent.transform.position = new Vector3(transform.position.x,transform.position.y, -10f);
     }
 }

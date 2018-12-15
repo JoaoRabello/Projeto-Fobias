@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using EZCameraShake;
 
 public class Fish : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class Fish : MonoBehaviour {
     private CharMovement player;
 
     private Animator anim;
+
+    CameraShakeInstance camShakeInstance;
 
     private void Start()
     {
@@ -42,6 +45,7 @@ public class Fish : MonoBehaviour {
             anim.SetBool("Spawn", true);
             StartCoroutine(MoveAnim());
             player = col.gameObject.GetComponent<CharMovement>();
+            camShakeInstance = CameraShaker.Instance.StartShake(1f,0.5f,0.15f);
         }
     }
 
@@ -49,7 +53,7 @@ public class Fish : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("Ariel") || col.gameObject.CompareTag("Clarice"))
         {
-            
+            camShakeInstance.StartFadeOut(0.15f);
             StartCoroutine(SetInactive());
         }
     }

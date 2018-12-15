@@ -116,6 +116,6 @@ public class GameController : MonoBehaviour {
     IEnumerator WaitForCredits()
     {
         yield return new WaitForSecondsRealtime(5f);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 }
