@@ -430,7 +430,7 @@ public class CharMovement : MonoBehaviour {
         }
     }
 
-    private void EntraEmPanico(float valorPanico)
+    public void EntraEmPanico(float valorPanico)
     {
         panico += valorPanico;
         panicoSlider.value = panico;

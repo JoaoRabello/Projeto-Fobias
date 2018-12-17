@@ -19,12 +19,18 @@ public class TouchEvents : MonoBehaviour {
     public bool startRandomize;
     private float timeToPlay;
 
+    private GameController gc;
+
     [SerializeField] private OnTouchEvent myEvent;
     [SerializeField] private OnTouchEvent randomEvent1;
     [SerializeField] private OnTouchEvent randomEvent2;
     [SerializeField] private OnTouchEvent randomEvent3;
     [SerializeField] private OnTouchEvent randomEvent4;
-   
+
+    private void Awake()
+    {
+        gc = FindObjectOfType<GameController>();
+    }
 
     private void Start()
     {
@@ -122,7 +128,15 @@ public class TouchEvents : MonoBehaviour {
 
     void Text()
     {
-        dlgTrigger.TriggerDialogue();
+        if(gc.GetActiveChar() == 0)
+        {
+            dlgTrigger.TriggerDialogue();
+        }
+        else
+        {
+            if (gc.GetActiveChar() == 2)
+                GetComponentInChildren<DialogueTrigger>().TriggerDialogue();
+        }
         Destroy(this);
     }
 }

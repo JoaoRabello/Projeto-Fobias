@@ -5,6 +5,7 @@ using EZCameraShake;
 public class Fish : MonoBehaviour {
 
     private bool playerOnSight;
+    private bool spawn = true;
     public float speed;
     private CharMovement player;
 
@@ -36,16 +37,25 @@ public class Fish : MonoBehaviour {
             anim.SetFloat("x", -1);
         }
     }
+    
+    private void Spawn()
+    {
+        playerOnSight = true;
+        anim.SetBool("Spawn", true);
+        StartCoroutine(MoveAnim());
+        camShakeInstance = CameraShaker.Instance.ShakeOnce(2f, 0.3f, 0.15f, 0.15f);
+    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Ariel") || col.gameObject.CompareTag("Clarice"))
         {
-            playerOnSight = true;
-            anim.SetBool("Spawn", true);
-            StartCoroutine(MoveAnim());
-            player = col.gameObject.GetComponent<CharMovement>();
-            camShakeInstance = CameraShaker.Instance.StartShake(1f,0.5f,0.15f);
+            if (spawn)
+            {
+                player = col.gameObject.GetComponent<CharMovement>();
+                Spawn();
+                spawn = false;
+            }
         }
     }
 
@@ -53,7 +63,6 @@ public class Fish : MonoBehaviour {
     {
         if (col.gameObject.CompareTag("Ariel") || col.gameObject.CompareTag("Clarice"))
         {
-            camShakeInstance.StartFadeOut(0.15f);
             StartCoroutine(SetInactive());
         }
     }

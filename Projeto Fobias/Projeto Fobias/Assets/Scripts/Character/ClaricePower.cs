@@ -7,18 +7,35 @@ public class ClaricePower : MonoBehaviour {
     public Transform originHole;
     public Transform destinyHole;
 
+    public bool hasDialogueBeforeChoice = false;
+    public bool hasDialogueAfterChoice = false;
+    private Decision decision;
+
     private void Awake()
     {
         clarice = GameObject.FindGameObjectWithTag("Clarice");
+        decision = FindObjectOfType<Decision>();
+
     }
 
     void Update () {
         if (Input.GetKeyDown(KeyCode.C) && canUsePower)
         {
-            clarice.transform.position = destinyHole.position;
-            SwapHole();
+            DialogueAndPlayerChoose();
         }
 	}
+
+    void DialogueAndPlayerChoose()
+    {
+        decision.SetQuestionText("Você deseja entrar no duto de ar?");
+        decision.Ask();
+    }
+
+    public void UsePower()
+    {
+        clarice.transform.position = destinyHole.position;
+        SwapHole();
+    }
 
     void SwapHole()
     {
