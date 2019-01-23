@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
@@ -14,10 +15,12 @@ public class GameController : MonoBehaviour {
     public CharMovement clariceGO;
 
     [SerializeField] int activeChar = 0;
+    [SerializeField] Button resumeButton;
 
     private void Awake()
     {
         pauseTextInstance.SetActive(false);
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -74,6 +77,7 @@ public class GameController : MonoBehaviour {
     public void Pause()
     {
         Time.timeScale = 0;
+        resumeButton.Select();
         onPause = true;
         pauseTextInstance.gameObject.SetActive(true);
     }
@@ -94,6 +98,12 @@ public class GameController : MonoBehaviour {
     {
         StartCoroutine(WaitForCredits());
         
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("Cena Principal");
+        FindObjectOfType<Save>().LoadStatus();
     }
 
     public void PauseAllAudio()

@@ -18,6 +18,7 @@ TagManager:
   - Enemy
   - Agua
   - Camera Parent
+  - SavePoint
   layers:
   - Default
   - TransparentFX

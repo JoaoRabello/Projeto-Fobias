@@ -33,6 +33,7 @@ public class Inventario : MonoBehaviour
                     if (!InventarioFull())
                     {
                         EncheInventário("Chave2");
+                        col.GetComponent<DialogueTrigger>().TriggerDialogue();
                         Destroy(col.gameObject);
                         key2Event.Invoke();
                     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Decision : MonoBehaviour {
@@ -11,7 +12,9 @@ public class Decision : MonoBehaviour {
 
     [SerializeField] private TextMeshProUGUI baloonText;
     [SerializeField] string questionText;
+    [SerializeField] private GameObject baloonGO;
     [SerializeField] private Animator baloonAnim;
+    [SerializeField] private Button yesButton;
 
     public void SetQuestionText(string txt)
     {
@@ -20,6 +23,7 @@ public class Decision : MonoBehaviour {
 
     public void Ask()
     {
+        baloonGO.SetActive(true);
         hasAnswered = false;
         baloonText.text = questionText;
         baloonAnim.SetBool("Open", true);
@@ -33,8 +37,13 @@ public class Decision : MonoBehaviour {
 
     IEnumerator WaitAnswer()
     {
+        yesButton.Select();
+        Time.timeScale = 0;
         yield return new WaitUntil(() => hasAnswered == true);
         canReturn = true;
         baloonAnim.SetBool("Open",false);
+        Time.timeScale = 1;
+        yield return new WaitForSeconds(0.5f);
+        baloonGO.SetActive(false);
     }
 }

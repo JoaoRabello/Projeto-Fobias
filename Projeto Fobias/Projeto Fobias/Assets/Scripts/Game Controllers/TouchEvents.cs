@@ -10,7 +10,7 @@ public class OnTouchEvent : UnityEvent
 
 public class TouchEvents : MonoBehaviour {
 
-    public enum Event { enemy, cutscene, text, evento, multiplosEventos};
+    public enum Event { enemy, cutscene, text, evento, multiplosEventos, eventoAutoDestroi};
     public Event eventTag;
 
     public GameObject enemyPool;
@@ -70,6 +70,10 @@ public class TouchEvents : MonoBehaviour {
                 break;
             case Event.multiplosEventos:
                 startRandomize = true;
+                break;
+            case Event.eventoAutoDestroi:
+                myEvent.Invoke();
+                Destroy(this);
                 break;
         }
     }

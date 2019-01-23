@@ -65,6 +65,7 @@ public class CharMovement : MonoBehaviour {
     public Slider cansacoSlider;
     public Slider panicoSlider;
 
+
     [SerializeField] LockedSoundEvents somEvento;
     #endregion
 
@@ -197,6 +198,12 @@ public class CharMovement : MonoBehaviour {
             camArea.Resize();
             camArea.follow = true;
         }
+
+        //if (col.gameObject.CompareTag("SavePoint"))
+        //{
+        //    Save save = FindObjectOfType<Save>();
+        //    save.SaveStatus();
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D col)

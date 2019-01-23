@@ -15,11 +15,11 @@ public class ClaricePower : MonoBehaviour {
     {
         clarice = GameObject.FindGameObjectWithTag("Clarice");
         decision = FindObjectOfType<Decision>();
-
+        decision.SetQuestionText("Você deseja entrar no duto de ar?");
     }
 
     void Update () {
-        if (Input.GetKeyDown(KeyCode.C) && canUsePower)
+        if (Input.GetKeyDown(KeyCode.X) && canUsePower)
         {
             DialogueAndPlayerChoose();
         }
@@ -27,7 +27,6 @@ public class ClaricePower : MonoBehaviour {
 
     void DialogueAndPlayerChoose()
     {
-        decision.SetQuestionText("Você deseja entrar no duto de ar?");
         decision.Ask();
     }
 

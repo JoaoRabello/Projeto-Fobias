@@ -16,12 +16,16 @@ public class ItemImageSpawner : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.X) && canImageSpawn && imageSpawned == false)
         {
+            Debug.Log("spawna imagem lua");
             ItemShow("open");
         }
-
-        if (Input.GetKeyDown(KeyCode.Space) && imageSpawned)
+        else
         {
-            ItemShow("close");    
+            if (Input.GetKeyDown(KeyCode.X) && imageSpawned)
+            {
+                Debug.Log("fecha imagem lua");
+                ItemShow("close");
+            }
         }
 	}
 
@@ -32,11 +36,14 @@ public class ItemImageSpawner : MonoBehaviour {
             case "open":
                 Instantiate(canvasWithImage);
                 imageSpawned = true;
+                canImageSpawn = false;
                 Time.timeScale = 0;
                 break;
             case "close":
+                Debug.Log("destroi imagem lua");
                 Destroy(GameObject.FindGameObjectWithTag("Item Image"));
                 imageSpawned = false;
+                canImageSpawn = false;
                 Time.timeScale = 1;
                 break;
         }

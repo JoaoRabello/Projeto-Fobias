@@ -15,6 +15,7 @@ public class DialogueButton : MonoBehaviour {
     private void Start()
     {
         button = GetComponent<Button>();
+        button.Select();
         //image = GetComponent<Image>();
     }
 
