@@ -31,8 +31,8 @@ public class Moth : MonoBehaviour {
         if (followPlayer)
         {
             MoveAndAnime(playerGO);
-            if(interruptor.GetAcesa() == false)
-                player.EntraEmPanico(0.01f);
+            //if(interruptor.GetAcesa() == false)
+                //player.EntraEmPanico(0.01f);
         }
         else
         {

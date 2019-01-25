@@ -5,6 +5,7 @@ public class Interruptor : MonoBehaviour {
     private Light luz;
     private bool acesa = false;
     private bool playerOnRange = false;
+    private bool canInteract = false;
 
     [SerializeField] private SpriteRenderer candelabro;
     [SerializeField] private Sprite spriteCandelabroOn;
@@ -14,6 +15,19 @@ public class Interruptor : MonoBehaviour {
     [SerializeField] private Sprite spriteInterruptorOn;
     [SerializeField] private Sprite spriteInterruptorOff;
 
+    public bool CanInteract
+    {
+        get
+        {
+            return canInteract;
+        }
+
+        set
+        {
+            canInteract = value;
+        }
+    }
+
     private void Start()
     {
         luz = GetComponent<Light>();
@@ -21,7 +35,7 @@ public class Interruptor : MonoBehaviour {
 
     void Update () {
 
-        if (playerOnRange)
+        if (playerOnRange && CanInteract)
         {
             if (!acesa && Input.GetKeyDown(KeyCode.X))
             {
