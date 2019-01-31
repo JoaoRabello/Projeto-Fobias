@@ -182,6 +182,7 @@ public class CharMovement : MonoBehaviour {
         {
             door = col.gameObject.GetComponent<DoorSystem>();
             canUseDoor = true;
+            door.canUseDoor = true;
         }
 
         if (col.gameObject.CompareTag("Agua"))
@@ -221,11 +222,6 @@ public class CharMovement : MonoBehaviour {
         {
             readTrigger = null;
             canDialogue = false;
-        }
-
-        if (col.gameObject.CompareTag("Door"))
-        {
-            canUseDoor = false;
         }
 
         if (col.gameObject.CompareTag("Agua"))

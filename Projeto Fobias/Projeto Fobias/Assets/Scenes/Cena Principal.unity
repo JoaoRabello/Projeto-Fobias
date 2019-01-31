@@ -372,6 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 1045857879}
   chave: {fileID: 0}
@@ -2001,6 +2002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 756334073}
   chave: {fileID: 0}
@@ -4541,6 +4543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 573499545}
   chave: {fileID: 0}
@@ -4586,7 +4589,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147798131}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &248441856
 BoxCollider2D:
@@ -4626,7 +4629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraPositionDestiny: {fileID: 248441855}
   target: {fileID: 0}
-  size: 8
+  size: 6
   follow: 0
   isFollowArea: 0
   smoothSpeed: 0
@@ -5554,6 +5557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 1
   doorDestiny: {fileID: 1068673165}
   chave: {fileID: 0}
@@ -9653,6 +9657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 235965618}
   chave: {fileID: 0}
@@ -10035,6 +10040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   keyName: Chave1
+  canUseDoor: 0
   hasAnim: 1
   doorDestiny: {fileID: 1644128257}
   chave: {fileID: 216980774}
@@ -11359,6 +11365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 119880011}
   chave: {fileID: 0}
@@ -12488,6 +12495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   keyName: Chave2
+  canUseDoor: 0
   hasAnim: 1
   doorDestiny: {fileID: 996632177}
   chave: {fileID: 771600803}
@@ -12749,6 +12757,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 400421447}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 970361878}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -16436,6 +16455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 1134527412}
   chave: {fileID: 0}
@@ -16639,6 +16659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 756334073}
   chave: {fileID: 0}
@@ -17641,6 +17662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 0}
   chave: {fileID: 0}
@@ -18532,6 +18554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 284187477}
   chave: {fileID: 0}
@@ -18930,7 +18953,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147798131}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1078567972
 SpriteRenderer:
@@ -19777,6 +19800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 982713357}
   chave: {fileID: 0}
@@ -19896,9 +19920,9 @@ Transform:
   m_LocalPosition: {x: 199.1, y: 0.017956473, z: 0.034339644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 248441855}
   - {fileID: 1078567971}
   - {fileID: 1443885785}
-  - {fileID: 248441855}
   - {fileID: 1268061014}
   - {fileID: 1219764941}
   - {fileID: 1680685886}
@@ -20973,6 +20997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 1228971316}
   chave: {fileID: 0}
@@ -21810,6 +21835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 1
   doorDestiny: {fileID: 1184997093}
   chave: {fileID: 0}
@@ -22693,6 +22719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 1134527412}
   chave: {fileID: 0}
@@ -23107,6 +23134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 1
   doorDestiny: {fileID: 1732041016}
   chave: {fileID: 0}
@@ -25351,7 +25379,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1147798131}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1443885786
 SpriteRenderer:
@@ -27990,6 +28018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 595493225}
   chave: {fileID: 0}
@@ -28249,6 +28278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 1
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 680647643}
   chave: {fileID: 0}
@@ -29129,6 +29159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 1317113495}
   chave: {fileID: 0}
@@ -29204,6 +29235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 1277658803}
   chave: {fileID: 0}
@@ -32080,6 +32112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   keyName: 
+  canUseDoor: 0
   hasAnim: 0
   doorDestiny: {fileID: 119880011}
   chave: {fileID: 0}

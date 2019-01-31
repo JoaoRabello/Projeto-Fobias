@@ -5,6 +5,7 @@ public class DoorSystem : MonoBehaviour {
 
     public bool isLocked;
     public string keyName;
+    public bool canUseDoor = false;
 
     public bool hasAnim;
     public GameObject doorDestiny;
@@ -41,8 +42,18 @@ public class DoorSystem : MonoBehaviour {
 
     public void DoorEnter(GameObject player)
     {
-        fadeAnim.SetTrigger("Fade");
-        StartCoroutine(WaitToOpen(player));
+        if (canUseDoor)
+        {
+            fadeAnim.SetTrigger("Fade");
+            StartCoroutine(WaitToOpen(player));
+            canUseDoor = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Clarice") || col.gameObject.CompareTag("Ariel"))
+            canUseDoor = false;
     }
 
     IEnumerator WaitToOpen(GameObject player)
