@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour {
     private void Awake()
     {
         pauseTextInstance.SetActive(false);
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
